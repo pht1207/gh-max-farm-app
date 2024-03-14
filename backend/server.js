@@ -32,7 +32,6 @@ app.listen(BACKENDPORT, () => {
 const DBUsername = process.env.DBUsername;
 const DBPassword = process.env.DBPassword;
 const DBName = process.env.DBName;
-console.log(DBUsername)
 
 // Create a pool of connections so the DB is up and available for use
 const pool = mysql.createPool({
@@ -47,7 +46,6 @@ const pool = mysql.createPool({
 
 
 start();
-//csvPrimaryKeyMaker.start();
   
 
 
@@ -58,9 +56,11 @@ start();
 
 
 async function start() {
+    await tablesReset();
     await csvOutputMaker();
-    console.log(await gpuNameArrayMaker(csvOutputArray));
-    await gpuTableMaker(await gpuNameArrayMaker(csvOutputArray));
+    console.log(await gpuNameArrayMaker(csvOutputArray))
+    await gpuTableMaker(await gpuNameArrayMaker(csvOutputArray)); //puts gpu's into gpu_table
+    await resultsTableMaker(csvOutputArray);
 }
 
 let csvOutputArray = [];
@@ -83,9 +83,11 @@ async function csvOutputMaker(){
 async function gpuNameArrayMaker(array){
     return new Promise((resolve, reject) => {
         let gpuNameArray = [];
+        let currentGPU;
         for(let i = 0; i < array.length; i++){
-            if(!gpuNameArray.includes(array[i].GPU)){
-                gpuNameArray.push(array[i].GPU)
+            currentGPU = array[i].GPU;
+            if(!gpuNameArray.includes(currentGPU)){
+                gpuNameArray.push(currentGPU)
             }
         }
         resolve(gpuNameArray)
@@ -107,4 +109,55 @@ async function gpuTableMaker(array){
           })
       
     }
-  }
+}
+
+//This inserts all the results into the results_table
+async function resultsTableMaker(array){
+    //const query = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, plot_filter, user, information)  VALUES ((SELECT 'gpu_id' FROM), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+    for(let i = 0; i < array.length; i++){
+        let query = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, plot_filter, user, information)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        let values = [
+            array[i]['GPU'],
+            array[i]['CPU'],
+            array[i]['Difficulty'],
+            array[i]['-r'],
+            array[i]['k'],
+            array[i]['C'],
+            array[i]['OS'],
+            array[i]['Giga Version'],
+            array[i]['Max Farm Size'],
+            array[i]['User'],
+            array[i]['Information']
+        ];
+        pool.query(query, values, (error, results) =>{
+            if(error){
+                console.error(error);
+            }
+            else{
+            }
+          })
+      
+    }
+
+}
+
+
+
+
+
+
+
+
+
+//Wipes the db so it can start fresh from csv
+async function tablesReset(){
+    pool.query("DELETE FROM results", (error, results) =>{
+        if(error){
+            console.error(error);
+        }
+        else{
+            pool.query("DELETE FROM gpu_table;")
+            console.log("db wiped")
+        }
+        })
+}
