@@ -80,7 +80,7 @@ const showGPUNames = async function(req, res){
 app.get('/showGPUNames', upload.none(), showGPUNames)
 
 
-
+//Gets rows from result table where the gpu from get request matches
 const showResultsTableByGPU = async function(req, res){
     console.log(req.query.gpu)
     const query = "SELECT * from results "+
@@ -103,13 +103,12 @@ const showResultsTableByGPU = async function(req, res){
 }
 app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
 
+//Gets rows from result table where the gpu and c-level from get request matches
 const showResultsTableByCLevelAndGPU = async function(req, res){
-    console.log(req.query.gpu)
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
     "WHERE gpu_name = ? AND c_level = ?"
     const values = [req.query.gpu, req.query.clevel];
-    console.log(req.query)
     pool.query(query, values, (error, results) =>{
         if(error){
             console.error(error);

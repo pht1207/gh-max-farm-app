@@ -1,0 +1,23 @@
+.Filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.123);
+    border-width: .01em;
+}
+.Filter .FilterRow{
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+.Filter .FilterRow p{
+    width: 100%;
+    margin:0;
+    padding:.25em;
+}
+.Filter .FilterRow :hover{
+    cursor:pointer
+}

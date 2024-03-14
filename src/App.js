@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import GPURow from './components/GPURow';
+import Filter from './components/Filter';
+import { useState } from 'react';
 
 function App() {
+  const [cLevel, setCLevel] = useState();
+  const [selectedGPU, setSelectedGPU] = useState("RTX 3060");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Max Farm V3 Website</h1>
+      <div className='AppContainer'>
+        <Filter selectedGPU={selectedGPU} setSelectedGPU={setSelectedGPU}/>
+
+        <GPURow selectedGPU={selectedGPU} setSelectedGPU={setSelectedGPU}/>
+      </div>
     </div>
   );
 }
