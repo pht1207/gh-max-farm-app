@@ -6,8 +6,8 @@ const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
 const csv = require('fast-csv');
-const e = require('express');
 
+const upload = multer();
 
 
 const corsOptions ={
@@ -42,10 +42,10 @@ const pool = mysql.createPool({
     database        : DBName
 });
 
+start(); //starts the process of putting the csv into the DB
 
 
 
-start();
   
 
 
@@ -53,15 +53,106 @@ start();
 
 
 
+{/* START OF SECTION: HTTP REQUESTS
+    This section contains the http requests that the frontend has access to
+    Methods in this section
+        -showGPUNames
+        -showGPUResultsByGPU
+*/}
+
+const showGPUNames = async function(req, res){
+    const query = "SELECT gpu_table.gpu_name from gpu_table"
+    pool.query("SELECT gpu_table.gpu_name from gpu_table", (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            console.log(results);
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+app.get('/showGPUNames', upload.none(), showGPUNames)
 
 
+
+const showResultsTableByGPU = async function(req, res){
+    console.log(req.query.gpu)
+    const query = "SELECT * from results "+
+    "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
+    "WHERE gpu_name = ?"
+    const values = req.query.gpu;
+    pool.query(query, values, (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
+
+const showResultsTableByCLevelAndGPU = async function(req, res){
+    console.log(req.query.gpu)
+    const query = "SELECT * from results "+
+    "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
+    "WHERE gpu_name = ? AND c_level = ?"
+    const values = [req.query.gpu, req.query.clevel];
+    console.log(req.query)
+    pool.query(query, values, (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+app.get('/showResultsTableByCLevelAndGPU', upload.none(), showResultsTableByCLevelAndGPU)
+
+{/* END OF SECTION: HTTP REQUESTS*/}
+
+
+
+
+
+
+
+
+{/* START OF SECTION: APP INITIALIZATION
+    This section contains the methods that take the .csv, parse it and put it in the database as structured data
+    Methods in this section
+        -start()
+        -csvOutputMaker()
+        -gpuNameArrayMaker()
+        -resultsTableMaker()
+        -tablesReset()
+*/}
 async function start() {
     await tablesReset();
     await csvOutputMaker();
     console.log(await gpuNameArrayMaker(csvOutputArray))
     await gpuTableMaker(await gpuNameArrayMaker(csvOutputArray)); //puts gpu's into gpu_table
-    await resultsTableMaker(csvOutputArray);
+    await resultsTableMaker(csvOutputArray); //Puts the csvOutputArray into the results table
 }
+
+
 
 let csvOutputArray = [];
 
@@ -101,7 +192,7 @@ async function gpuTableMaker(array){
         //console.log(values);
         pool.query(query, values, (error, results) =>{
             if(error){
-              console.error(error);
+              //console.error(error);
             }
             else{
                 console.log(results)
@@ -136,16 +227,8 @@ async function resultsTableMaker(array){
             else{
             }
           })
-      
     }
-
 }
-
-
-
-
-
-
 
 
 
