@@ -70,7 +70,6 @@ const showGPUNames = async function(req, res){
               });
         }
         else{
-            console.log(results);
             res.status(200).json({
                 results
               });
@@ -82,12 +81,13 @@ app.get('/showGPUNames', upload.none(), showGPUNames)
 
 //Gets rows from result table where the gpu from get request matches
 const showResultsTableByGPU = async function(req, res){
-    console.log(req.query.gpu)
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
     "WHERE gpu_name = ? "+
-    "ORDER BY c_level"
-    const values = req.query.gpu;
+    "AND (c_level = ? OR ? = 'ANY') "+
+    "AND (k_size = ? OR ? = 'ANY') "+
+    "ORDER BY c_level ASC, max_farm_size ASC"
+    const values = [req.query.gpu, req.query.clevel, req.query.clevel, req.query.klevel, req.query.klevel];
     pool.query(query, values, (error, results) =>{
         if(error){
             console.error(error);
@@ -104,28 +104,7 @@ const showResultsTableByGPU = async function(req, res){
 }
 app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
 
-//Gets rows from result table where the gpu and c-level from get request matches
-const showResultsTableByCLevelAndGPU = async function(req, res){
-    const query = "SELECT * from results "+
-    "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
-    "WHERE gpu_name = ? AND c_level = ? "+
-    "ORDER BY c_level"
-    const values = [req.query.gpu, req.query.clevel];
-    pool.query(query, values, (error, results) =>{
-        if(error){
-            console.error(error);
-            res.status(500).json({
-                error:"error occured"
-              });
-        }
-        else{
-            res.status(200).json({
-                results
-              });
-            }
-        })
-}
-app.get('/showResultsTableByCLevelAndGPU', upload.none(), showResultsTableByCLevelAndGPU)
+
 
 {/* END OF SECTION: HTTP REQUESTS*/}
 
@@ -146,11 +125,12 @@ app.get('/showResultsTableByCLevelAndGPU', upload.none(), showResultsTableByCLev
         -tablesReset()
 */}
 async function start() {
-    await tablesReset();
-    await csvOutputMaker();
-    console.log(await gpuNameArrayMaker(csvOutputArray))
-    await gpuTableMaker(await gpuNameArrayMaker(csvOutputArray)); //puts gpu's into gpu_table
-    await resultsTableMaker(csvOutputArray); //Puts the csvOutputArray into the results table
+    if(await tablesReset()){
+        await csvOutputMaker();
+        await gpuTableMaker(await gpuNameArrayMaker(csvOutputArray)); //puts gpu's into gpu_table
+        await resultsTableMaker(csvOutputArray); //Puts the csvOutputArray into the results table
+    
+    };
 }
 
 
@@ -160,10 +140,16 @@ let csvOutputArray = [];
 //Pushes data from the csv file to an array
 async function csvOutputMaker(){
     return new Promise((resolve, reject) => {
-        fs.createReadStream(path.resolve(__dirname, './', 'maxfarm.csv'))
-            .pipe(csv.parse({ headers: true }))
+        fs.createReadStream(path.resolve(__dirname, './', 'Max Farm Size GH 3.0 - GPU.csv'))
+            .pipe(csv.parse({ headers: true },{skipLines:1}))
             .on('error', error => reject(error))
-            .on('data', row => csvOutputArray.push(row))
+            .on('data', row => {
+                if(row.CPU === '' || row.k === '' || row.GPU === ''){
+                }
+                else{
+                    csvOutputArray.push(row)
+                }
+            })
             .on('end', () => {
                 resolve();
             });
@@ -190,13 +176,12 @@ async function gpuTableMaker(array){
     const query = "INSERT INTO gpu_table (gpu_name)  VALUES (?)"
     for(let i = 0; i < array.length; i++){
         let values = array[i];
-        //console.log(values);
         pool.query(query, values, (error, results) =>{
             if(error){
-              //console.error(error);
+              console.error(error);
             }
             else{
-                console.log(results)
+                //console.log(results)
             }
           })
       
@@ -217,7 +202,7 @@ async function resultsTableMaker(array){
             array[i]['C'],
             array[i]['OS'],
             array[i]['Giga Version'],
-            array[i]['Max Farm Size'],
+            array[i]['(Plot filter = 256)'],
             array[i]['User'],
             array[i]['Information']
         ];
@@ -235,13 +220,18 @@ async function resultsTableMaker(array){
 
 //Wipes the db so it can start fresh from csv
 async function tablesReset(){
+    return new Promise((resolve, reject) => {
+
     pool.query("DELETE FROM results", (error, results) =>{
         if(error){
             console.error(error);
+            reject(false)
         }
         else{
             pool.query("DELETE FROM gpu_table;")
             console.log("db wiped")
+            resolve(true);
         }
         })
+    })
 }
