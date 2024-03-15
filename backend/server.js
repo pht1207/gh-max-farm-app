@@ -85,7 +85,8 @@ const showResultsTableByGPU = async function(req, res){
     console.log(req.query.gpu)
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
-    "WHERE gpu_name = ?"
+    "WHERE gpu_name = ? "+
+    "ORDER BY c_level"
     const values = req.query.gpu;
     pool.query(query, values, (error, results) =>{
         if(error){
@@ -107,7 +108,8 @@ app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
 const showResultsTableByCLevelAndGPU = async function(req, res){
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
-    "WHERE gpu_name = ? AND c_level = ?"
+    "WHERE gpu_name = ? AND c_level = ? "+
+    "ORDER BY c_level"
     const values = [req.query.gpu, req.query.clevel];
     pool.query(query, values, (error, results) =>{
         if(error){
@@ -205,7 +207,7 @@ async function gpuTableMaker(array){
 async function resultsTableMaker(array){
     //const query = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, plot_filter, user, information)  VALUES ((SELECT 'gpu_id' FROM), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
     for(let i = 0; i < array.length; i++){
-        let query = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, plot_filter, user, information)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        let query = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, max_farm_size, user, information)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         let values = [
             array[i]['GPU'],
             array[i]['CPU'],
