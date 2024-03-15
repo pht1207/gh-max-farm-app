@@ -16,6 +16,7 @@ function App() {
 
         <GPUResults selectedGPU={selectedGPU} setSelectedGPU={setSelectedGPU} cLevel={cLevel} setCLevel={setCLevel} kSize={kSize} setKSize={setKSize}/>
       </div>
+      <div className='Footer'><p onClick={()=>{window.open("https://github.com/pht1207")}}>Made by Parker Throneberry</p></div>
     </div>
   );
 }
