@@ -1,6 +1,6 @@
 .GPUResults{
     background-color: whitesmoke;
-    width: 60%;
+    width: 70%;
     border-style: solid;
     border-color: rgba(0, 0, 0, 0.123);
     border-width: .01em;
@@ -45,11 +45,14 @@
 }
 
 .GPUResultsExtraInformation{
-    margin-left: 1em;
-    padding-top:1em;
+    margin-left: .5em;
+    padding-top:.25em;
     padding-bottom:1em;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    width: 90%;
+}
+.GPUResultsExtraInformation p{
+    margin: .5em;
 }

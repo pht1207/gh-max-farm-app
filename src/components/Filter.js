@@ -10,7 +10,7 @@ function Filter(props) {
     useEffect(() =>{
         const fetchData = async () => { 
             try {
-              const response = await axios.get("http://192.168.1.127:5012/showGPUNames", {});
+              const response = await axios.get("https://gh-max-farm.parkert.dev/backend/showGPUNames", {});
               await setGPUArray(response.data.results)
             }
               catch (error) {
