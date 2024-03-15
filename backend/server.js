@@ -128,23 +128,27 @@ app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
         -tablesReset()
 */}
 async function start() {
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/1mghuzD1MzNFNK7N9lnZ_D59jHSceezwFREsF5kg5BWw/export?format=csv&id=1mghuzD1MzNFNK7N9lnZ_D59jHSceezwFREsF5kg5BWw&gid=1012308633';
+    const outputPath = 'Max Farm Size GH 3.0 - GPU.csv';
+    try {
+        await fetchCsvAndWriteToFile(csvUrl, outputPath) //fetches the csv
 
-    if(await tablesReset()){
-        if(await csvOutputMaker()){
-            if(await gpuTableMaker(await gpuNameArrayMaker(csvOutputArray)));{//puts gpu's into gpu_table
-                if(await resultsTableMaker(csvOutputArray)){ //Puts the csvOutputArray into the results table
-                    console.log("Successfully started backend without errors")
-                }
-                
-            } 
-        }
-    };
+        await csvOutputMaker(); //turns the csv into a programming object
+        const gpuNames = await gpuNameArrayMaker(csvOutputArray);
+        await gpuTableMaker(gpuNames);
+        await resultsTableMaker(csvOutputArray);
+        console.log("Successfully started backend without errors");
+    }
+    catch(error){
+        console.error("An error occurred in start process:", error);
+    }
 }
+
 
 
 async function isFileEmpty(file){
     try {
-        const filePath = path.resolve(__dirname, fileName);
+        const filePath = path.resolve(__dirname, file);
         const fileContent = fs.readFileSync(filePath, 'utf8');
         return fileContent.length === 0;
       }
@@ -157,6 +161,7 @@ async function isFileEmpty(file){
 let csvOutputArray = [];
 //Pushes data from the csv file to an array
 async function csvOutputMaker(){
+    csvOutputArray = [];
     let fileName = 'Max Farm Size GH 3.0 - GPU.csv';
     if(isFileEmpty(fileName)){ //Used to fallback on previous version if the download fails for whatever reason
         fileName = 'Max Farm Size GH 3.0 - GPU copy.csv';
@@ -170,7 +175,7 @@ async function csvOutputMaker(){
             .on('error', error => reject(error))
             .on('headers', (headers)=>{console.log("csv headers:", headers)})
             .on('data', row => {
-                if(row.GPU === '' || row.CPU === '' || row.Difficulty === ''|| row.k === '' || row.C === '' || row["(Plot filter = 256)"] === ''){
+                if(row.GPU === '' || row.CPU === '' || row.Difficulty === ''|| row.k === '' || row.C === '' || row["(Plot filter = 256)"] === '' || row.GPU === 'GPU'){
                 }
                 else{
                     let gpuObject = {
@@ -212,30 +217,46 @@ async function gpuNameArrayMaker(array){
 }
 
 async function gpuTableMaker(array){
-    return new Promise((resolve, reject) => {
-        const query = "INSERT INTO gpu_table (gpu_name)  VALUES (?)"
+    return new Promise(async (resolve, reject) => {
         for(let i = 0; i < array.length; i++){
-            let values = array[i];
-            pool.query(query, values, (error, results) =>{
+            let firstQuery = "SELECT * FROM gpu_table where gpu_table.gpu_name = ?;"
+            pool.query(firstQuery, [array[i]], (error, results) =>{
                 if(error){
-                console.error(error);
-                reject(false);
+                    console.error(error);
                 }
                 else{
-                    //console.log(results)
-                }
+                    if(results.length === 0){ //If there are no matching gpu_name values, create a new gpu entry
+                    const query = "INSERT INTO gpu_table (gpu_name)  VALUES (?)"
+                        let values = [array[i]];
+                        pool.query(query, values, (error, results) =>{
+                            if(error){
+                            console.error(error);
+                            reject(false);
+                            }
+                            else{
+                                //console.log(results)
+                            }
+                        })
+                        }
+                    }
             })
             }
             resolve(true);  
-    });
-    
+        })
+}
+
+const crypto = require('crypto');
+function hashRow(rowObject) {
+    const hash = crypto.createHash('sha256');
+    const valuesString = Object.values(rowObject).join('|');
+    hash.update(valuesString);
+    return hash.digest('hex');
 }
 
 //This inserts all the results into the results_table
 async function resultsTableMaker(array){
     return new Promise((resolve, reject) => {
         for(let i = 0; i < array.length; i++){
-            let query = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, max_farm_size, user, information)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             let values = [
                 array[i]['GPU'],
                 array[i]['CPU'],
@@ -249,35 +270,49 @@ async function resultsTableMaker(array){
                 array[i]['User'],
                 array[i]['Information']
             ];
-            pool.query(query, values, (error, results) =>{
+
+            hash = hashRow(values)
+            values.push(hash)
+
+            let firstQuery = "SELECT * FROM results where results.hash = ?;"
+            pool.query(firstQuery, [hash], (error, results) =>{
                 if(error){
                     console.error(error);
-                    reject(false);
                 }
                 else{
+                    if(results.length === 0){ //if there are no matching results found for the has in the select statement, then insert
+                        let secondQuery = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, max_farm_size, user, information, hash)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                        pool.query(secondQuery, values, (error, results) =>{
+                            if(error){
+                                //console.error("Error entering result to DB")
+                                //console.error(error);
+                                reject(false);
+                            }
+                            else{
+                            }
+                        })
+                    }
+                    else{
+                    }
                 }
             })
+
         }
         resolve(true);  
     });
 }
 
-//Wipes the db so it can start fresh from csv
-async function tablesReset(){
-    return new Promise((resolve, reject) => {
 
-    pool.query("DELETE FROM results", (error, results) =>{
-        if(error){
-            console.error(error);
-            reject(false)
-        }
-        else{
-            pool.query("DELETE FROM gpu_table;")
-            resolve(true);
-        }
-        })
-    })
-}
+
+async function fetchCsvAndWriteToFile(url, filePath) {
+    try {
+      const response = await axios.get(url);
+      fs.writeFileSync(filePath, response.data);
+      console.log(`CSV file has been saved to ${filePath}`);
+    } catch (error) {
+      console.error('Error fetching or writing CSV:', error);
+    }
+  }
 
 {/* END SECTION: APP INITIALIZATION */}
 
@@ -286,32 +321,20 @@ async function tablesReset(){
 
 
 
-{/* SECTION: FETCH CSV 
+{/* SECTION: CRON JOB
     -This section of code is for fetching the .csv twice daily and restarts the program
 */}
 const cron = require('node-cron');
-const csvUrl = 'https://docs.google.com/spreadsheets/d/1mghuzD1MzNFNK7N9lnZ_D59jHSceezwFREsF5kg5BWw/export?format=csv&id=1mghuzD1MzNFNK7N9lnZ_D59jHSceezwFREsF5kg5BWw&gid=1012308633';
-const outputPath = 'Max Farm Size GH 3.0 - GPU.csv';
 
 cron.schedule('0 0 * * *', function() {
-  console.log('Running fetchCsvAndWriteToFile once a day at 12am');
-  fetchCsvAndWriteToFile(csvUrl, outputPath)
+  console.log('Running start() 12am');
   start();
 });
 cron.schedule('0 12 * * *', function() {
-    console.log('Running fetchCsvAndWriteToFile once a day at 12pm');
-    fetchCsvAndWriteToFile(csvUrl, outputPath)
+    console.log('Running start() 12pm');
     start();
   });
 
-async function fetchCsvAndWriteToFile(url, filePath) {
-  try {
-    const response = await axios.get(url);
-    fs.writeFileSync(filePath, response.data);
-    console.log(`CSV file has been saved to ${filePath}`);
-  } catch (error) {
-    console.error('Error fetching or writing CSV:', error);
-  }
-}
+
 
 {/* END SECTION: FETCH CSV */}
