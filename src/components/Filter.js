@@ -12,7 +12,6 @@ function Filter(props) {
             try {
               const response = await axios.get("http://192.168.1.127:5012/showGPUNames", {});
               await setGPUArray(response.data.results)
-              console.log(gpuArray)
             }
               catch (error) {
               console.error('Error fetching data: ', error);
@@ -27,8 +26,8 @@ function Filter(props) {
             <h1>Filter</h1>
             {gpuArray.length > 0 ? 
             <>
-                {gpuArray.map((name, index) => 
-                    <FilterRow key={index} name={name} index={index} selectedGPU={props.selectedGPU} setSelectedGPU={props.setSelectedGPU}/>
+                {gpuArray.map((resultElement, index) => 
+                    <FilterRow key={index} resultElement={resultElement} index={index} selectedGPU={props.selectedGPU} setSelectedGPU={props.setSelectedGPU}/>
                 )}
 
             </>

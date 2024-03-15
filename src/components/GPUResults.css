@@ -1,0 +1,55 @@
+.GPUResults{
+    background-color: whitesmoke;
+    width: 60%;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.123);
+    border-width: .01em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.GPUResults .GPUResultsHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.GPUResults .GPUResultsHeader *{
+    display: flex;
+    flex-direction: row;
+    margin-right:.5em;
+    margin-left:.5em;
+    align-items: center;
+}
+
+
+.GPUResults .GPUResultsHeader{
+    width: 100%;
+}
+
+.GPUResults .GPUResultsRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.GPUResults .GPUResultsRow p{
+    text-align: start;
+    width: 25%;
+}
+.GPUResults .GPUResultsRow :hover{
+    cursor: pointer;
+    background-color: rgba(225, 225, 225, 1);
+}
+
+.GPUResultsExtraInformation{
+    margin-left: 1em;
+    padding-top:1em;
+    padding-bottom:1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
