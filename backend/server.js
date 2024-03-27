@@ -10,7 +10,7 @@ const axios = require('axios');
 
 const upload = multer();
 
-
+let viewCount = 0;
 const corsOptions ={
     origin:'*', 
     //credentials:true,            //access-control-allow-credentials:true
@@ -84,6 +84,7 @@ app.get('/showGPUNames', upload.none(), showGPUNames)
 
 //Gets rows from result table where the gpu from get request matches
 const showResultsTableByGPU = async function(req, res){
+    viewCount++;
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
     "WHERE gpu_name = ? "+
@@ -148,8 +149,8 @@ async function start() {
 
 async function isFileEmpty(file){
     try {
-        const filePath = path.resolve(__dirname, file);
-        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const filePath = await path.resolve(__dirname, file);
+        const fileContent = await fs.readFileSync(filePath, 'utf8');
         return fileContent.length === 0;
       }
       catch (error) {
@@ -163,7 +164,8 @@ let csvOutputArray = [];
 async function csvOutputMaker(){
     csvOutputArray = [];
     let fileName = 'Max Farm Size GH 3.0 - GPU.csv';
-    if(isFileEmpty(fileName)){ //Used to fallback on previous version if the download fails for whatever reason
+    if(await isFileEmpty(fileName)){ //Used to fallback on previous version if the download fails for whatever reason
+        console.log("Regular csv read empty, using copy");
         fileName = 'Max Farm Size GH 3.0 - GPU copy.csv';
     }
     return new Promise((resolve, reject) => {
@@ -329,10 +331,12 @@ const cron = require('node-cron');
 cron.schedule('0 0 * * *', function() {
   console.log('Running start() 12am');
   start();
+  console.log(viewCount);
 });
 cron.schedule('0 12 * * *', function() {
     console.log('Running start() 12pm');
     start();
+    console.log(viewCount);
   });
 
 
