@@ -164,10 +164,7 @@ let csvOutputArray = [];
 async function csvOutputMaker(){
     csvOutputArray = [];
     let fileName = 'Max Farm Size GH 3.0 - GPU.csv';
-    if(await isFileEmpty(fileName)){ //Used to fallback on previous version if the download fails for whatever reason
-        console.log("Regular csv read empty, using copy");
-        fileName = 'Max Farm Size GH 3.0 - GPU copy.csv';
-    }
+
     return new Promise((resolve, reject) => {
         fs.createReadStream(path.resolve(__dirname, './', fileName))
             .pipe(csv.parse({
@@ -338,7 +335,15 @@ cron.schedule('0 12 * * *', function() {
     start();
     console.log(viewCount);
   });
-
-
+  cron.schedule('0 6 * * *', function() {
+    console.log('Running start() 6am');
+    start();
+    console.log(viewCount);
+  });
+  cron.schedule('0 18 * * *', function() {
+    console.log('Running start() 6pm');
+    start();
+    console.log(viewCount);
+  });
 
 {/* END SECTION: FETCH CSV */}
