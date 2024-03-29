@@ -20,10 +20,12 @@ function Filter(props) {
           fetchData();
     },[])
     
+    const resultElementAny = {gpu_name:"Any"}
 
     return (
         <div className="Filter">
-            <h1>Filter</h1>
+            <h2>Select GPU to Filter By</h2>
+            <FilterRow resultElement={resultElementAny} index={-1} selectedGPU={props.selectedGPU} setSelectedGPU={props.setSelectedGPU}/>
             {gpuArray.length > 0 ? 
             <>
                 {gpuArray.map((resultElement, index) => 
@@ -33,7 +35,7 @@ function Filter(props) {
             </>
             :
             <>
-                <p>array rendering...</p>
+                <p>fetching array...</p>
             </>}
         </div>
     );

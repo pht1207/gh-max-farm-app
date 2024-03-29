@@ -8,7 +8,7 @@ function App() {
   const [cLevel, setCLevel] = useState("Any");
   const [kSize, setKSize] = useState("32");
   const [gigaVersion, setGigaVersion] = useState("Any")
-  const [selectedGPU, setSelectedGPU] = useState("RTX 3060");
+  const [selectedGPU, setSelectedGPU] = useState("Any");
 
   const [gigaVersionArray, setGigaVersionArray] = useState([""])
   const [kSizeArray, SetKSizeArray] = useState([""])

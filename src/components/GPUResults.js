@@ -50,12 +50,12 @@ function GPUResults(props) {
         </div>
       </div>
       <br/>
-      <p onClick={()=>{console.log(gpuResults)}}>Showing {gpuResults.length} results for: "{props.selectedGPU}" at K-Size "{props.kSize}", C-Level: "{props.cLevel}", Version: "{props.gigaVersion}"</p>
+      <p>Showing {gpuResults.length} results for:&ensp;[GPU: {props.selectedGPU}] &ensp;[K-Size: {props.kSize}] &ensp;[C-Level: {props.cLevel}] &ensp;[Version: {props.gigaVersion}]</p>
       <hr style={{width:"100%"}}/>
       {gpuResults.length > 0 ? 
             <>
                 {gpuResults.map((resultElement, index) => 
-                    <GPUResultsRow key={index} resultElement={resultElement} index={index}/>
+                    <GPUResultsRow key={index} resultElement={resultElement} index={index} selectedGPU={props.selectedGPU}/>
                 )}
             </>
             :

@@ -98,12 +98,12 @@ app.get('/showGPUNames', upload.none(), showGPUNames)
 const showResultsTableByGPU = async function(req, res){
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
-    "WHERE gpu_name = ? "+
+    "WHERE gpu_name = ?  OR ? = 'ANY' "+
     "AND (c_level = ? OR ? = 'ANY') "+
     "AND k_size = ? "+
     "AND (giga_version = ? OR ? = 'ANY') "+
     "ORDER BY c_level ASC, max_farm_size ASC"
-    const values = [req.query.gpu, req.query.clevel || "ANY", req.query.clevel || "ANY", req.query.ksize, req.query.gigaversion || "ANY", req.query.gigaversion || "ANY"];
+    const values = [req.query.gpu || "ANY", req.query.gpu || "ANY", req.query.clevel || "ANY", req.query.clevel || "ANY", req.query.ksize, req.query.gigaversion || "ANY", req.query.gigaversion || "ANY"];
     pool.query(query, values, (error, results) =>{
         if(error){
             console.error(error);
