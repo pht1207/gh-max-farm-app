@@ -20,7 +20,6 @@ function GPUResults(props) {
   },[props.selectedGPU, props.cLevel, props.kSize, props.gigaVersion])
 
 
-  //used to create the giga version select element array
 
 
 
@@ -29,36 +28,31 @@ function GPUResults(props) {
       <div className='GPUResultsHeader'>
         <p>Currently selected GPU: {props.selectedGPU}</p>
         <div className='CLevelSelector'>
-          <p>Set K-Size and C-Level:</p>
+          <p>Set K-Size, C-Level and GH-Version:</p>
           <select defaultValue={"32"} onChange={(event)=>{props.setKSize(event.target.value)}}>
-            <option value="32">K32</option>
-            <option value="33">K33</option>
-            <option value="34">K34</option>
-
-        </select>
-        <select defaultValue={"Any"} onChange={(event)=>{props.setGigaVersion(event.target.value)}}>
-            <option value="Any">Any</option>
-            {props.gigaVersionArray.map((value, index) =>(
-                <option key={index}>{value.giga_version}</option>
+            {props.kSizeArray.map((value, index) =>(
+                <option key={index} value={value.k_size}>K{value.k_size}</option>
             ))}
         </select>
         <select defaultValue={"Any"} onChange={(event)=>{props.setCLevel(event.target.value)}}>
-            <option value="Any">Any</option>
-            <option value="26">C26</option>
-            <option value="27">C27</option>
-            <option value="28">C28</option>
-            <option value="29">C29</option>
-            <option value="30">C30</option>
-            <option value="31">C31</option>
-            <option value="32">C32</option>
-            <option value="33">C33</option>
+          <option value="Any">Any</option>
+            {props.cLevelArray.map((value, index) =>(
+                <option key={index}>{value.c_level}</option>
+            ))}
         </select>
+        <select defaultValue={"Any"} onChange={(event)=>{props.setGigaVersion(event.target.value)}}>
+            <option value="Any">Any</option>
+              {props.gigaVersionArray.map((value, index) =>(
+            <option key={index}>{value.giga_version}</option>
+            ))}
+        </select>
+
         </div>
       </div>
       <br/>
-      <p onClick={()=>{console.log(gpuResults)}}>Showing {gpuResults.length} results for: "{props.selectedGPU}" at K-Size "{props.kSize}" C-Level: "{props.cLevel}"</p>
+      <p onClick={()=>{console.log(gpuResults)}}>Showing {gpuResults.length} results for: "{props.selectedGPU}" at K-Size "{props.kSize}", C-Level: "{props.cLevel}", Version: "{props.gigaVersion}"</p>
       <hr style={{width:"100%"}}/>
-    {gpuResults.length > 0 ? 
+      {gpuResults.length > 0 ? 
             <>
                 {gpuResults.map((resultElement, index) => 
                     <GPUResultsRow key={index} resultElement={resultElement} index={index}/>

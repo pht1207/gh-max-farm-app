@@ -11,13 +11,40 @@ function App() {
   const [selectedGPU, setSelectedGPU] = useState("RTX 3060");
 
   const [gigaVersionArray, setGigaVersionArray] = useState([""])
+  const [kSizeArray, SetKSizeArray] = useState([""])
+  const [cLevelArray, setCLevelArray] = useState([""])
+
 
   //used to get the giga_version values from csv
   useEffect(()=>{
     const fetchData = async () => { 
       try {
-          const response = await axios.get("https://gh-max-farm.parkert.dev/backend/getFilterValues", {});
+          const response = await axios.get("https://gh-max-farm.parkert.dev/backend/getGigaVersions", {});
           setGigaVersionArray(response.data.results)
+      }
+        catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+    fetchData();
+  },[])
+  useEffect(()=>{
+    const fetchData = async () => { 
+      try {
+          const response = await axios.get("https://gh-max-farm.parkert.dev/backend/getCLevels", {});
+          setCLevelArray(response.data.results)
+      }
+        catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+    fetchData();
+  },[])
+  useEffect(()=>{
+    const fetchData = async () => { 
+      try {
+          const response = await axios.get("https://gh-max-farm.parkert.dev/backend/getKSizes", {});
+          SetKSizeArray(response.data.results)
       }
         catch (error) {
         console.error('Error fetching data: ', error);
@@ -37,6 +64,8 @@ function App() {
         kSize={kSize} setKSize={setKSize} 
         gigaVersion={gigaVersion} setGigaVersion={setGigaVersion}
         gigaVersionArray={gigaVersionArray} setGigaVersionArray={setGigaVersionArray}
+        cLevelArray={cLevelArray} setCLevelArray={setCLevelArray}
+        kSizeArray={kSizeArray} SetKSizeArray={SetKSizeArray}
         />
         
       </div>

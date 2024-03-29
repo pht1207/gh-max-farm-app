@@ -111,8 +111,40 @@ app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
 
 
 
-const getFilterValues = async function(req, res){
+const getGigaVersions = async function(req, res){
     const query = "SELECT DISTINCT giga_version from results"
+    pool.query(query, [], (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+const getCLevels = async function(req, res){
+    const query = "SELECT DISTINCT c_level from results ORDER BY c_level ASC"
+    pool.query(query, [], (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+const getKSizes = async function(req, res){
+    const query = "SELECT DISTINCT k_size from results ORDER BY k_size ASC"
     pool.query(query, [], (error, results) =>{
         if(error){
             console.error(error);
@@ -129,7 +161,10 @@ const getFilterValues = async function(req, res){
 }
 
 
-app.get('/getFilterValues', upload.none(), getFilterValues)
+
+app.get('/getGigaVersions', upload.none(), getGigaVersions)
+app.get('/getCLevels', upload.none(), getCLevels)
+app.get('/getKSizes', upload.none(), getKSizes)
 
 {/* END OF SECTION: HTTP REQUESTS*/}
 
