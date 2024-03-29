@@ -90,8 +90,9 @@ const showResultsTableByGPU = async function(req, res){
     "WHERE gpu_name = ? "+
     "AND (c_level = ? OR ? = 'ANY') "+
     "AND k_size = ? "+
+    "AND (giga_version = ? OR ? = 'ANY') "+
     "ORDER BY c_level ASC, max_farm_size ASC"
-    const values = [req.query.gpu, req.query.clevel, req.query.clevel, req.query.ksize];
+    const values = [req.query.gpu, req.query.clevel || "ANY", req.query.clevel || "ANY", req.query.ksize, req.query.gigaversion || "ANY", req.query.gigaversion || "ANY"];
     pool.query(query, values, (error, results) =>{
         if(error){
             console.error(error);
@@ -109,6 +110,26 @@ const showResultsTableByGPU = async function(req, res){
 app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
 
 
+
+const getFilterValues = async function(req, res){
+    const query = "SELECT DISTINCT giga_version from results"
+    pool.query(query, [], (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+
+
+app.get('/getFilterValues', upload.none(), getFilterValues)
 
 {/* END OF SECTION: HTTP REQUESTS*/}
 

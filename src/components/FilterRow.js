@@ -9,7 +9,7 @@ function FilterRow(props) {
             setBackgroundColor("rgba(0, 0, 0, 0.123)");
         }
         else{ //change back to default on mouse leave
-                setBackgroundColor('rgba(245, 245, 245, 1)')
+            setBackgroundColor('rgba(245, 245, 245, 1)')
         }
     },[mouseHover])
     

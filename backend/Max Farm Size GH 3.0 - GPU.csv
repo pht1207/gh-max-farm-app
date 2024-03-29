@@ -1,11 +1,27 @@
 ,,,,,,,,Max Farm Size,,
 GPU,CPU,Difficulty,-r,k,C,OS,Giga Version,(Plot filter = 256),User,Information
+GTX 1070 Ti,E5-2690 v4,"10,000",8,32,29,Windows 10 Pro,2.2.1.giga33,0.219,madMAx43v3r,
+RTX A5000,2 x E5-2650 v2,"10,000",8,32,29,Ubuntu 20.04 server,2.1.4.giga32,1.150,madMAx43v3r,
+GTX 1070 Ti,E5-2690 v4,"10,000",8,32,30,Windows 10 Pro,2.2.1.giga33,0.153,madMAx43v3r,
 RTX 3060 Ti,2 x E5-2650 v2,"20,000",8,32,30,Ubuntu 20.04 server,2.1.4.giga30,0.450,madMAx43v3r,
-RTX 3060 Ti,2 x E5-2650 v2,"50,000",8,32,31,Ubuntu 20.04 server,2.1.4.giga30,0.245,madMAx43v3r,
 RTX A5000,Ryzen 5800X,"20,000",8,32,30,Ubuntu 20.04 server,2.1.4.giga30,0.610,madMAx43v3r,
+GTX 1070 Ti,E5-2690 v4,"10,000",8,32,31,Windows 10 Pro,2.2.1.giga33,0.086,madMAx43v3r,
+RTX 3060 Ti,2 x E5-2650 v2,"50,000",8,32,31,Ubuntu 20.04 server,2.1.4.giga30,0.245,madMAx43v3r,
 RTX A5000,Ryzen 5800X,"50,000",8,32,31,Ubuntu 20.04 server,2.1.4.giga30,0.335,madMAx43v3r,
 RTX A5000,Ryzen 5800X,"100,000",8,32,32,Ubuntu 20.04 server,2.1.4.giga30,0.155,madMAx43v3r,
 RTX A5000,Ryzen 5800X,"200,000",8,32,33,Ubuntu 20.04 server,2.1.4.giga30,0.065,madMAx43v3r,
+RTX 4060 Ti,Ryzen 5800X,10000,8,32,29,Ubuntu 20.04 server,2.2.1.giga33,0.680,madMAx43v3r,Driver 550.54.15
+RTX 4060 Ti,Ryzen 5800X,20000,8,32,30,Ubuntu 20.04 server,2.2.1.giga33,0.461,madMAx43v3r,Driver 550.54.15
+RTX 4060 Ti,Ryzen 5800X,50000,8,32,31,Ubuntu 20.04 server,2.2.1.giga33,0.256,madMAx43v3r,Driver 550.54.15
+RTX 4060 Ti,Ryzen 5800X,10000,8,32,29,Ubuntu 20.04 server,2.2.1.giga34,0.840,madMAx43v3r,Driver 550.54.15
+RTX 4060 Ti,Ryzen 5800X,20000,8,32,30,Ubuntu 20.04 server,2.2.1.giga34,0.524,madMAx43v3r,Driver 550.54.15
+RTX 4060 Ti,Ryzen 5800X,50000,8,32,31,Ubuntu 20.04 server,2.2.1.giga34,0.273,madMAx43v3r,Driver 550.54.15
+RTX 3060 Ti,E5-2650 v2,10000,8,32,29,Ubuntu 20.04 server,2.2.1.giga34,0.830,madMAx43v3r,Driver 535.161.07
+RTX 3060 Ti,E5-2650 v2,20000,8,32,30,Ubuntu 20.04 server,2.2.1.giga34,0.515,madMAx43v3r,Driver 535.161.07
+RTX 3060 Ti,E5-2650 v2,50000,8,32,31,Ubuntu 20.04 server,2.2.1.giga34,0.250,madMAx43v3r,Driver 535.161.07
+RTX 2060 Super,E5-2470 v2,10000,8,32,29,Ubuntu 20.04 server,2.2.1.giga34,0.396,madMAx43v3r,Driver 530.30.02
+RTX 2060 Super,E5-2470 v2,20000,8,32,30,Ubuntu 20.04 server,2.2.1.giga34,0.266,madMAx43v3r,Driver 530.30.02
+RTX 2060 Super,E5-2470 v2,50000,8,32,31,Ubuntu 20.04 server,2.2.1.giga34,0.145,madMAx43v3r,Driver 530.30.02
 ,,,,,,,,,,
 RTX 4070,E5-2680v4,"20,000",8,32,30,Ubuntu 22.04 server,2.1.4.giga30,0.617,xkredr,
 RTX 4070,E5-2680v4,"20,000",8,32,31,Ubuntu 22.04 server,2.1.4.giga30,0.343,xkredr,
@@ -24,6 +40,9 @@ RTX 4070 Super,Ryzen 5800X,"20,000",8,32,30,Ubuntu 23.10 server,2.1.4.giga30,0.7
 RTX 4070 Super,Ryzen 5800X,"800,000",8,32,30,Ubuntu 23.10 server,2.1.4.giga30,0.768,gnomuz,
 RTX 4070 Super,Ryzen 5800X,"20,000",8,32,31,Ubuntu 23.10 server,2.1.4.giga30,0.406,gnomuz,
 RTX 4070 Super,Ryzen 5800X,"800,000",8,32,31,Ubuntu 23.10 server,2.1.4.giga30,0.436,gnomuz,
+RTX 4070 Super,Ryzen 5800X,"1,230",8,32,29,Ubuntu 23.10 Server,2.1.4.giga32,0.918,gnomuz,1 partial proof every 8 min for 1 PiB raw (180 partials / day)
+RTX 4070 Super,Ryzen 5800X,"10,000",8,32,29,Ubuntu 23.10 Server,2.1.4.giga32,1.088,gnomuz,Recommended difficulty for C29
+RTX 4070 Super,Ryzen 5800X,"800,000",8,32,29,Ubuntu 23.10 Server,2.1.4.giga32,1.121,gnomuz,Solo equivalent
 RTX 4090,Epyc 7402P,"1,000",16,32,30,Ubuntu desktop 22.04,2.1.4.giga30,0.938,General Failure,
 RTX 4090,Epyc 7402P,"5,000",16,32,30,Ubuntu desktop 22.04,2.1.4.giga30,1.188,General Failure,
 RTX 4090,Epyc 7402P,"10,000",16,32,30,Ubuntu desktop 22.04,2.1.4.giga30,1.269,General Failure,
@@ -78,6 +97,10 @@ RTX 4090,E5-1620,500,8,32,32,Ubuntu 22.04,2.1.4.giga30,0.161,Engage,PCIe 3; Z420
 RTX 4090,E5-1620,500,8,32,32,Ubuntu 22.04,2.1.4.giga30,0.190,Engage,PCIe 3; Z420 469W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
 RTX 4090,E5-1620,"1,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.082,Engage,PCIe 3; Z420 265W grid power metered (using sudo nvidia-smi -i 0 -pl 150)
 RTX 4090,E5-1620,"1,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.124,Engage,PCIe 3; Z420 320W grid power metered (using sudo nvidia-smi -i 0 -pl 200)
+RTX 4090,E5-1620,"1,500",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.195,Engage,PCIe 3; Z420 475W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
+RTX 4090,E5-1620,"2,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.209,Engage,PCIe 3; Z420 482W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
+RTX 4090,E5-1620,"2,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.219,Engage,PCIe 3; Z420 578W grid power metered
+RTX 4090,E5-1620,"2,500",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.217,Engage,PCIe 3; Z420 483W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
 RTX 4090,E5-1620,"100,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.367,Engage,PCIe 3; Z420 469W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
 RTX 4090,E5-1620,"100,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.394,Engage,PCIe 3; Z420 565W grid power metered 
 RTX 4090,E5-1650 v3,"200,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.395,Engage,PCIe 3
@@ -91,6 +114,12 @@ RTX 3090,Ryzen 5950X,"100,000",8,32,32,Windows 11,2.1.4.giga30,0.240,Brad,
 RTX 3090,Ryzen 5950X,"200,000",8,32,33,Windows 11,2.1.4.giga30,0.097,Brad,
 RTX 3070,2x E5-2680 v2,"20,000",16,32,30,Ubuntu 23.04 server,2.1.4.giga30,0.525,303-Acid,"Dell R720, Dell OEM RTX3070"
 RTX 3070,2x E5-2680 v2,"50,000",16,32,31,Ubuntu 23.04 server,2.1.4.giga30,0.278,303-Acid,"Dell R720, Dell OEM RTX3070"
+RTX 3060 Ti,E5-2670 v1,"10,000",16,32,29,Ubuntu 23.04 Server,2.1.4.giga32,0.798,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
+RTX 3060 Ti,E5-2670 v1,"10,000",16,32,29,Ubuntu 23.04 Server,2.2.1.giga34,0.821,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
+RTX 3060 Ti,E5-2670 v1,"20,000",16,32,30,Ubuntu 23.04 Server,2.1.4.giga32,0.497,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
+RTX 3060 Ti,E5-2670 v1,"20,000",16,32,30,Ubuntu 23.04 Server,2.2.1.giga34,0.500,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
+RTX 3060 Ti,E5-2670 v1,"50,000",16,32,31,Ubuntu 23.04 Server,2.1.4.giga32,0.245,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
+RTX 3060 Ti,E5-2670 v1,"50,000",16,32,31,Ubuntu 23.04 Server,2.2.1.giga34,0.265,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
 RTX 3090,Ryzen TR 2990WX,"20,000",16,32,30,Unraid 6.12.8,2.1.4.giga30,0.879,A_Hale,PCIe 3
 RTX 3090,Ryzen TR 2990WX,"50,000",16,32,31,Unraid 6.12.8,2.1.4.giga30,0.482,A_Hale,PCIe 3
 RTX 3090,Ryzen TR 2990WX,"100,000",16,32,32,Unraid 6.12.8,2.1.4.giga30,0.217,A_Hale,PCIe 3
@@ -118,6 +147,8 @@ RTX 3090,EPYC 7302P,"200,000",8,32,33,Windows Server 2022,2.1.4.giga30,0.101,Sir
 RTX 3070,i7-8700,"50,000",8,32,31,Unraid - Docker,2.1.4.giga30,0.294,Darknebula,
 RTX 3090,Ryzen 5900X,"20,000",8,32,30,Windows 11 Pro 22H2,2.1.4.giga30,0.873,CS,PCIe 4
 RTX 3090,Ryzen 5900X,"50,000",8,32,30,Windows 11 Pro 22H2,2.1.4.giga30,0.831,CS,PCIe 4
+RTX 3090,Ryzen 5900X,"20,000",8,32,31,Windows 11 Pro 22H2,2.1.4.giga30,0.457,CS,PCIe 4
+RTX 3090,Ryzen 5900X,"50,000",8,32,31,Windows 11 Pro 22H2,2.1.4.giga30,0.484,CS,PCIe 4
 RTX 3060,i5 8800K,"20,000",16,32,30,Ubuntu,2.1.4.giga31,0.39,DrInksalot,
 RTX 3060,i5 8800K,"20,000",16,32,30,Ubuntu,2.1.4.giga31,0.301,DrInksalot,100W power limit
 RTX 3060,E5-2698v4,"10,000",,32,30,Ubuntu 23.10,2.1.4.giga31,0.309,DomoKitty,120W power limit
@@ -141,6 +172,25 @@ RTX 3070,Ryzen 7800X3D,"20,000",,32,31,Ubuntu 23.10,2.1.4.giga31,0.239,DomoKitty
 RTX 3070,Ryzen 7800X3D,"20,000",,32,31,Ubuntu 23.10,2.1.4.giga31,0.257,DomoKitty,140W power limit
 RTX 3070,Ryzen 7800X3D,"20,000",,32,31,Ubuntu 23.10,2.1.4.giga31,0.279,DomoKitty,175W power limit
 RTX 3070,Ryzen 7800X3D,"20,000",,32,31,Ubuntu 23.10,2.1.4.giga31,0.294,DomoKitty,220W (default)
+RTX 3060,E5-2698v4,633,,32,29,Ubuntu 23.10,2.1.4.giga32,0.42,DomoKitty,120W power limit
+RTX 3060,E5-2698v4,"2,500",,32,29,Ubuntu 23.10,2.1.4.giga32,0.496,DomoKitty,120W power limit
+RTX 3060,E5-2698v4,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.539,DomoKitty,120W power limit
+RTX 3060,E5-2698v4,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.574,DomoKitty,170W default power
+RTX 3060,E5-2698v4,"2,500",,32,30,Ubuntu 23.10,2.1.4.giga32,0.277,DomoKitty,120W power limit
+RTX 3060,E5-2698v4,"10,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.331,DomoKitty,120W power limit
+RTX 3060,E5-2698v4,"50,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.341,DomoKitty,120W power limit
+RTX 3070,Ryzen 7800X3D,633,,32,29,Ubuntu 23.10,2.1.4.giga32,0.704,DomoKitty,175W power limit
+RTX 3070,Ryzen 7800X3D,"2,500",,32,29,Ubuntu 23.10,2.1.4.giga32,0.848,DomoKitty,175W power limit
+RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.922,DomoKitty,175W power limit
+RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.695,DomoKitty,100W power limit
+RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.801,DomoKitty,120W power limit
+RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.855,DomoKitty,140W power limit
+RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.969,DomoKitty,220W default power
+RTX 3070,Ryzen 7800X3D,"50,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.615,DomoKitty,220W default power
+RTX 3070,Ryzen 7800X3D,"20,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.577,DomoKitty,175W power limit
+RTX 3070,Ryzen 7800X3D,"10,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.561,DomoKitty,175W power limit
+RTX 3070,Ryzen 7800X3D,"2,500",,32,30,Ubuntu 23.10,2.1.4.giga32,0.468,DomoKitty,175W power limit
+RTX 3070,Ryzen 7800X3D,"2,500",,32,30,Ubuntu 23.10,2.1.4.giga32,0.403,DomoKitty,120W power limit
 RTX 3060 Ti,2X E5-2696v2,"2,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.164,iJey,Supermicro X9DR3/i-F
 RTX 3060 Ti,2X E5-2696v2,"20,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.228,iJey,Supermicro X9DR3/i-F
 RTX 3060 Ti,2X E5-2696v2,"50,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.241,iJey,Supermicro X9DR3/i-F
@@ -162,159 +212,121 @@ RTX 3080,5950x,"800,000",8,32,31,Xubuntu 23.10,2.1.4.giga31,0.428,zivester,FE 10
 2 x RTX 4070 S,Xeon Gold 6240,"500,000",8,32,31,Xubuntu 23.10,2.1.4.giga31,0.853,zivester,FE 12GB
 RTX 3060,E5 1620v3,"20,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.341,kenny,"PCIe 3 170W Dell Pecision 5810, Plot Drive SK Hynix M.2 1.92TB"
 RTX 3060,E5 1620v3,"800,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.352,kenny,"PCIe 3 170W Dell Pecision 5810, Plot Drive SK Hynix M.2 1.92TB"
-RTX 3090,Ryzen 5900X,"20,000",8,32,31,Windows 11 Pro 22H2,2.1.4.giga30,0.457,CS,PCIe 4
-RTX 3090,Ryzen 5900X,"50,000",8,32,31,Windows 11 Pro 22H2,2.1.4.giga30,0.484,CS,PCIe 4
-RTX 2080 Ti,Ryzen TR-1920X,1000,8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.311,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,5000,8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.406,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,20000,8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.448,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,50000,8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.455,leslieC,
-RTX 3090,Ryzen TR-1920X,20000,8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.885,leslieC,
-RTX 3090,Ryzen TR-1920X,50000,8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.907,leslieC,
-RTX 4080,Ryzen 5900X,10000,8,32,30,Ubuntu 22.04,2.1.4.giga31,1.000,teslak,pl=320W (max)
-RTX 4080,Ryzen 5900X,20000,8,32,30,Ubuntu 22.04,2.1.4.giga31,1.050,teslak,pl=320W (max)
-RTX 4080,Ryzen 5900X,800000,8,32,30,Ubuntu 22.04,2.1.4.giga31,1.080,teslak,pl=320W (max)
-RTX 4080,Ryzen 5900X,10000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.534,teslak,pl=320W (max)
-RTX 4080,Ryzen 5900X,20000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.562,teslak,pl=320W (max)
-RTX 4080,Ryzen 5900X,800000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.595,teslak,pl=320W (max)
-RTX 4080,Ryzen 5900X,10000,8,32,30,Ubuntu 22.04,2.1.4.giga31,0.810,teslak,pl=200W
-RTX 4080,Ryzen 5900X,20000,8,32,30,Ubuntu 22.04,2.1.4.giga31,0.845,teslak,pl=200W
-RTX 4080,Ryzen 5900X,800000,8,32,30,Ubuntu 22.04,2.1.4.giga31,0.857,teslak,pl=200W
-RTX 4080,Ryzen 5900X,10000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.420,teslak,pl=200W
-RTX 4080,Ryzen 5900X,20000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.450,teslak,pl=200W
-RTX 4080,Ryzen 5900X,800000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.467,teslak,pl=200W
-RTX 3070,Ryzen 5950X,10000,8,32,30,Ubuntu 22.04,2.1.4.giga31,0.542,ganbin,PCIe 4 pl=270W (max)
-RTX 3070,Ryzen 5950X,20000,8,32,30,Ubuntu 22.04,2.1.4.giga31,0.559,ganbin,PCIe 4 pl=270W (max)
-RTX 4070 Super,Ryzen 4500,50000,8,32,31,Ubuntu 22.04,2.1.4.giga31,0.413,updog,ASUS 4070 Super Overclocked
+RTX 2080 Ti,Ryzen TR-1920X,"5,000",16,32,29,Endeavour Linux 6.7.4,2.1.4.giga32,0.759,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"10,000",16,32,29,Endeavour Linux 6.7.4,2.1.4.giga32,0.780,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"20,000",16,32,29,Endeavour Linux 6.7.4,2.1.4.giga32,0.786,leslieC,
+RTX 3090,Ryzen TR-1920X,"5,000",16,32,29,Endeavour Linux 6.7.4,2.1.4.giga32,1.536,leslieC,
+RTX 3090,Ryzen TR-1920X,"10,000",16,32,29,Endeavour Linux 6.7.4,2.1.4.giga32,1.569,leslieC,
+RTX 3090,Ryzen TR-1920X,"20,000",16,32,29,Endeavour Linux 6.7.4,2.1.4.giga32,1.594,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"1,000",8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.311,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"5,000",8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.406,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"5,000",16,32,30,Endeavour Linux 6.7.4,2.1.4.giga32,0.495,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"10,000",16,32,30,Endeavour Linux 6.7.4,2.1.4.giga32,0.520,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"20,000",8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.448,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"20,000",16,32,30,Endeavour Linux 6.7.4,2.1.4.giga32,0.544,leslieC,
+RTX 2080 Ti,Ryzen TR-1920X,"50,000",8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.455,leslieC,
+RTX 3090,Ryzen TR-1920X,"20,000",8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.885,leslieC,
+RTX 3090,Ryzen TR-1920X,"50,000",8,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.907,leslieC,
+RTX 3090,Ryzen TR-1920X,"5,000",16,32,30,Endeavour Linux 6.7.4,2.1.4.giga32,0.919,leslieC,
+RTX 3090,Ryzen TR-1920X,"10,000",16,32,30,Endeavour Linux 6.7.4,2.1.4.giga32,0.969,leslieC,
+RTX 3090,Ryzen TR-1920X,"20,000",16,32,30,Endeavour Linux 6.7.4,2.1.4.giga32,1.017,leslieC,
+RTX 4080,Ryzen 5900X,"10,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,1.000,teslak,pl=320W (max)
+RTX 4080,Ryzen 5900X,"20,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,1.050,teslak,pl=320W (max)
+RTX 4080,Ryzen 5900X,"800,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,1.080,teslak,pl=320W (max)
+RTX 4080,Ryzen 5900X,"10,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.534,teslak,pl=320W (max)
+RTX 4080,Ryzen 5900X,"20,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.562,teslak,pl=320W (max)
+RTX 4080,Ryzen 5900X,"800,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.595,teslak,pl=320W (max)
+RTX 4080,Ryzen 5900X,"10,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.810,teslak,pl=200W
+RTX 4080,Ryzen 5900X,"20,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.845,teslak,pl=200W
+RTX 4080,Ryzen 5900X,"800,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.857,teslak,pl=200W
+RTX 4080,Ryzen 5900X,"10,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.420,teslak,pl=200W
+RTX 4080,Ryzen 5900X,"20,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.450,teslak,pl=200W
+RTX 4080,Ryzen 5900X,"800,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.467,teslak,pl=200W
+RTX 3070,Ryzen 5950X,"10,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.542,ganbin,PCIe 4 pl=270W (max)
+RTX 3070,Ryzen 5950X,"20,000",8,32,30,Ubuntu 22.04,2.1.4.giga31,0.559,ganbin,PCIe 4 pl=270W (max)
+RTX 4070 Super,Ryzen 4500,"50,000",8,32,31,Ubuntu 22.04,2.1.4.giga31,0.413,updog,ASUS 4070 Super Overclocked
 RTX 3060Ti,i9-7980XE,500,8,32,31,Ubuntu 22.04,2.1.4giga30,0.129,eaglerati,PCIe 3
-Tesla P4 x2,E5-2637v3,20000,8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.207,4DoorGTZ,PCIe 3
-Tesla P4,E5-2637v3,50000,8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.105,4DoorGTZ,PCIe 3
-Tesla P4 x2,E5-2637v3,50000,8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.211,4DoorGTZ,PCIe 3
-Tesla P4,E5-2637v3,50000,8,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.065,4DoorGTZ,PCIe 3
-RTX 3060ti,E5-2637v3,50000,8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.450,4DoorGTZ,PCIe 3
-RTX 3060ti,E5-2637v3,50000,8,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.246,4DoorGTZ,PCIe 3
-RTX 3060ti+P4+P4,E5-2637v3,50000,2,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.465,4DoorGTZ,PCIe 3
-RTX 3060ti+P4+P4,E5-2637v3,50000,4,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.627,4DoorGTZ,PCIe 3
-RTX 3060ti+P4+P4,E5-2637v3,50000,8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.656,4DoorGTZ,PCIe 3
-RTX 3060ti+P4+P4,E5-2637v3,50000,16,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.657,4DoorGTZ,PCIe 3
-RTX 3060ti+P4+P4,E5-2637v3,50000,16,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.368,4DoorGTZ,PCIe 3
-RTX 4060,Ryzen 5700G,50000,8,32,31,W11 Pro 22H2,2.1.4.giga31,0.199,4DoorGTZ,PCIe 3 x8 Gigabyte Low Profile 4060 in HTPC
-RTX 4060,Ryzen 5 3600X,10000,8,32,30,Ubuntu 22.04,2.1.4.giga30,0.350,gentoo,
-RTX 4060,Ryzen 5 3600X,20000,8,32,30,Ubuntu 22.04,2.1.4.giga30,0.362,gentoo,
-RTX 4060,Ryzen 5 3600X,20000,8,32,31,Ubuntu 22.04,2.1.4.giga30,0.196,gentoo,
-RTX 4060,Ryzen 5 3600X,50000,8,32,31,Ubuntu 22.04,2.1.4.giga30,0.203,gentoo,
-RTX 4060 Ti,Ryzen 5 3600X,10000,8,32,30,Ubuntu 22.04,2.1.4.giga30,0.437,gentoo,
-RTX 4060 Ti,Ryzen 5 3600X,20000,8,32,31,Ubuntu 22.04,2.1.4.giga30,0.245,gentoo,
-RTX 4060 Ti,Ryzen 5 3600X,50000,8,32,31,Ubuntu 22.04,2.1.4.giga30,0.254,gentoo,
+Tesla P4 x2,E5-2637v3,"20,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.207,4DoorGTZ,PCIe 3
+Tesla P4,E5-2637v3,"50,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.105,4DoorGTZ,PCIe 3
+Tesla P4 x2,E5-2637v3,"50,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.211,4DoorGTZ,PCIe 3
+RTX 3060ti,E5-2637v3,"50,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.450,4DoorGTZ,PCIe 3
+RTX 3060ti+P4+P4,E5-2637v3,"50,000",2,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.465,4DoorGTZ,PCIe 3
+RTX 3060ti+P4+P4,E5-2637v3,"50,000",4,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.627,4DoorGTZ,PCIe 3
+RTX 3060ti+P4+P4,E5-2637v3,"50,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.656,4DoorGTZ,PCIe 3
+RTX 3060ti+P4+P4,E5-2637v3,"50,000",16,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.657,4DoorGTZ,PCIe 3
+RTX 3060ti x2 +P4,E5-2637v3,"50,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.999,4DoorGTZ,PCIe 3 (P4 2.0 x4)
+Tesla P4,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.065,4DoorGTZ,PCIe 3
+RTX 3060ti,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.246,4DoorGTZ,PCIe 3
+RTX 3060ti+P4+P4,E5-2637v3,"50,000",16,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.368,4DoorGTZ,PCIe 3
+RTX 3060ti x2 +P4,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.557,4DoorGTZ,PCIe 3 (P4 2.0 x4)
+RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.494,4DoorGTZ,PCIe 3 pl = 200W
+RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.480,4DoorGTZ,PCIe 3 pl = 175W
+RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.459,4DoorGTZ,PCIe 3 pl = 150W
+RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.426,4DoorGTZ,PCIe 3 pl = 125W
+RTX 4060,Ryzen 5700G,"50,000",8,32,31,W11 Pro 22H2,2.1.4.giga31,0.199,4DoorGTZ,PCIe 3 x8 Gigabyte Low Profile 4060 in HTPC
+RTX 4060,Ryzen 5 3600X,"10,000",8,32,30,Ubuntu 22.04,2.1.4.giga30,0.350,gentoo,
+RTX 4060,Ryzen 5 3600X,"20,000",8,32,30,Ubuntu 22.04,2.1.4.giga30,0.362,gentoo,
+RTX 4060,Ryzen 5 3600X,"20,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.196,gentoo,
+RTX 4060,Ryzen 5 3600X,"50,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.203,gentoo,
+RTX 4060 Ti,Ryzen 5 3600X,"10,000",8,32,30,Ubuntu 22.04,2.1.4.giga30,0.437,gentoo,
+RTX 4060 Ti,Ryzen 5 3600X,"20,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.245,gentoo,
+RTX 4060 Ti,Ryzen 5 3600X,"50,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.254,gentoo,
 RTX 4070 Super,E5-2650v4,500,8,32,30,Ubuntu 22.04,2.1.4.giga31,0.442,MoMoneyThanSense,
-RTX 3070 Ti,E5-2690v2,20000,8,32,30,Windows 10,2.1.4.giga31,0.600,Jpr3st,Power limit 290W
-RTX 3070 Ti,E5-2690v2,20000,8,32,30,Windows 10,2.1.4.giga31,0.582,Jpr3st,Power limit 232W
-RTX 3070 Ti,E5-2690v2,20000,8,32,30,Windows 10,2.1.4.giga31,0.412,Jpr3st,Power limit 145W
-RTX 3060 Ti,2 x E5-2670 v2,50000,16,32,31,Windows 10,2.1.4 giga31,0.253,XxViper06xX,Power limit 200W
-RTX 3060,Ryzen 5600x,20000,8,32,30,Win 10,2.1.4.giga30,0.350,miguell,
+RTX 3070 Ti,E5-2690v2,"20,000",8,32,30,Windows 10,2.1.4.giga31,0.600,Jpr3st,Power limit 290W
+RTX 3070 Ti,E5-2690v2,"20,000",8,32,30,Windows 10,2.1.4.giga31,0.582,Jpr3st,Power limit 232W
+RTX 3070 Ti,E5-2690v2,"20,000",8,32,30,Windows 10,2.1.4.giga31,0.412,Jpr3st,Power limit 145W
+RTX 3060 Ti,2 x E5-2670 v2,"50,000",16,32,31,Windows 10,2.1.4 giga31,0.253,XxViper06xX,Power limit 200W
+RTX 3060,Ryzen 5600x,"20,000",8,32,30,Win 10,2.1.4.giga30,0.350,miguell,
 Tesla P4,2 x E5-2650L v2,100,8,32,30,Ubuntu,2.1.4.giga30,0.55,AllanMusk,
 7 x Tesla P4,2 x E5-2650L v2,100,8,32,30,Ubuntu,2.1.4.giga30,0.357,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
-7 x Tesla P4,2 x E5-2650L v2,10000,8,32,30,Ubuntu,2.1.4.giga30,0.646,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
-7 x Tesla P4,2 x E5-2650L v2,20000,8,32,30,Ubuntu,2.1.4.giga30,0.679,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
-7 x Tesla P4,2 x E5-2650L v2,50000,8,32,30,Ubuntu,2.1.4.giga30,0.702,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
+7 x Tesla P4,2 x E5-2650L v2,"10,000",8,32,30,Ubuntu,2.1.4.giga30,0.646,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
+7 x Tesla P4,2 x E5-2650L v2,"20,000",8,32,30,Ubuntu,2.1.4.giga30,0.679,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
+7 x Tesla P4,2 x E5-2650L v2,"50,000",8,32,30,Ubuntu,2.1.4.giga30,0.702,AllanMusk,Recompute Server with 7 Tesla P4 - [chiapos] Using 7 / 7 CUDA devices
 RTX 3060,2 x E5-2670 v2,100,8,32,30,Ubuntu,2.1.4.giga30,0.178,AllanMusk,
 2 x RTX 3060,2 x E5-2670 v2,100,8,32,30,Ubuntu,2.1.4.giga30,0.354,AllanMusk,
-2 x RTX 3060,2 x E5-2670 v2,10000,8,32,30,Ubuntu,2.1.4.giga30,0.651,AllanMusk,
-2 x RTX 3060,2 x E5-2670 v2,20000,8,32,30,Ubuntu,2.1.4.giga30,0.669,AllanMusk,
-2 x RTX 3060,2 x E5-2670 v2,50000,8,32,30,Ubuntu,2.1.4.giga30,0.691,AllanMusk,
+2 x RTX 3060,2 x E5-2670 v2,"10,000",8,32,30,Ubuntu,2.1.4.giga30,0.651,AllanMusk,
+2 x RTX 3060,2 x E5-2670 v2,"20,000",8,32,30,Ubuntu,2.1.4.giga30,0.669,AllanMusk,
+2 x RTX 3060,2 x E5-2670 v2,"50,000",8,32,30,Ubuntu,2.1.4.giga30,0.691,AllanMusk,
 RTX 3080,Ryzen 5950x,100,8,32,30,Win 11,2.1.4.giga30,0.401,AllanMusk,
-RTX 3080,Ryzen 5950x,10000,8,32,30,Win 11,2.1.4.giga30,0.733,AllanMusk,
-RTX 3080,Ryzen 5950x,20000,8,32,30,Win 11,2.1.4.giga30,0.759,AllanMusk,
-RTX 3080,Ryzen 5950x,50000,8,32,30,Win 11,2.1.4.giga30,0.762,AllanMusk,
+RTX 3080,Ryzen 5950x,"10,000",8,32,30,Win 11,2.1.4.giga30,0.733,AllanMusk,
+RTX 3080,Ryzen 5950x,"20,000",8,32,30,Win 11,2.1.4.giga30,0.759,AllanMusk,
+RTX 3080,Ryzen 5950x,"50,000",8,32,30,Win 11,2.1.4.giga30,0.762,AllanMusk,
 RTX 4070 Ti Super,Epyc 7302p,"20,000",8,32,30,Debian 12,2.1.4.giga30,0.858,BurstReynolds,
 RTX 4070 Ti Super,Epyc 7302p,"50,000",8,32,31,Debian 12,2.1.4.giga30,0.497,BurstReynolds,
 RTX 4070 Ti Super,Epyc 7302p,"100,000",8,32,32,Debian 12,2.1.4.giga30,0.244,BurstReynolds,
-RTX 3080 Ti,E5-2697 v3,20000,14,32,30,Ubuntu 22.04,2.1.4.giga30,0.885,Coloc77,"PCIe 3, X99 F8 board"
-RTX 3080 Ti,E5-2697 v3,50000,14,32,30,Ubuntu 22.04,2.1.4.giga30,0.904,Coloc77,"PCIe 3, X99 F8 board"
-RTX 3080 Ti,E5-2697 v3,100000,14,32,30,Ubuntu 22.04,2.1.4.giga30,0.911,Coloc77,"PCIe 3, X99 F8 board"
+RTX 3080 Ti,E5-2697 v3,"20,000",14,32,30,Ubuntu 22.04,2.1.4.giga30,0.885,Coloc77,"PCIe 3, X99 F8 board"
+RTX 3080 Ti,E5-2697 v3,"50,000",14,32,30,Ubuntu 22.04,2.1.4.giga30,0.904,Coloc77,"PCIe 3, X99 F8 board"
+RTX 3080 Ti,E5-2697 v3,"100,000",14,32,30,Ubuntu 22.04,2.1.4.giga30,0.911,Coloc77,"PCIe 3, X99 F8 board"
 RTX 3080 Ti,E5-2697 v3,"100,000",14,32,31,Ubuntu 22.04,2.1.4.giga30,0.491,Coloc77,"PCIe 3, X99 F8 board"
 RTX 3080 Ti,E5-2697 v3,"50,000",14,32,31,Ubuntu 22.04,2.1.4.giga30,0.482,Coloc77,"PCIe 3, X99 F8 board"
 RTX 3080 Ti,E5-2697 v3,"20,000",14,32,31,Ubuntu 22.04,2.1.4.giga30,0.467,Coloc77,"PCIe 3, X99 F8 board"
-RTX 3080 Ti,E5-2697 v3,20000,14,32,32,Ubuntu 22.04,2.1.4.giga30,0.207,Coloc77,"PCIe 3, X99 F8 board"
-RTX 3080 Ti,E5-2697 v3,50000,14,32,32,Ubuntu 22.04,2.1.4.giga30,0.223,Coloc77,"PCIe 3, X99 F8 board"
+RTX 3080 Ti,E5-2697 v3,"20,000",14,32,32,Ubuntu 22.04,2.1.4.giga30,0.207,Coloc77,"PCIe 3, X99 F8 board"
+RTX 3080 Ti,E5-2697 v3,"50,000",14,32,32,Ubuntu 22.04,2.1.4.giga30,0.223,Coloc77,"PCIe 3, X99 F8 board"
 ,,,,,,,,,,
-RTX 4060 Ti,E5-2697 v3,20000,14,32,30,Ubuntu 22.04,2.1.4.giga30,0.461,Coloc77,"PCIe 3, X99 F8 board"
-RTX 4060 Ti,E5-2697 v3,50000,14,32,30,Ubuntu 22.04,2.1.4.giga30,0.469,Coloc77,"PCIe 3, X99 F8 board"
-RTX 4060 Ti,E5-2697 v3,20000,14,32,31,Ubuntu 22.04,2.1.4.giga30,0.248,Coloc77,"PCIe 3, X99 F8 board"
-RTX 4060 Ti,E5-2697 v3,50000,14,32,31,Ubuntu 22.04,2.1.4.giga30,0.258,Coloc77,"PCIe 3, X99 F8 board"
-RTX 3090,TR PRO 5995WX,10000,8,32,32,Ubuntu 21.10,2.1.4.giga31,0.200,LebanonJon,
-RTX 3090,TR PRO 5995WX,10000,8,32,33,Ubuntu 21.10,2.1.4.giga31,0.073,LebanonJon,
-RTX 4080 Super,Xeon Gold 6336Y,10000,8,32,32,Ubuntu 21.10,2.1.4.giga31,0.234,LebanonJon,
-RTX 3070,i7 8700K,20000,12,32,30,Windows 11 Pro,2.1.4.giga30,0.545,Thomas Goodman,64GB RAM
-RTX 3090,i9 7960X,20000,16,32,30,Windows 11 Pro,2.1.4.giga30,0.837,Thomas Goodman,256GB RAM
-RTX 4090,Ryzen 7950X3D,20000,16,32,30,Windows 11 Pro,2.1.4.giga30,1.339,Thomas Goodman,128GB RAM
-RTX 3090,Xeon Platinum 8360Y ES,10000,8,32,30,Ubuntu 22.04,2.1.4.giga30,0.731,Petar,GPU core locked to 1395 MHz
-RTX 3090,Xeon Platinum 8360Y ES,10000,8,32,31,Ubuntu 22.04,2.1.4.giga30,0.378,Petar,GPU core locked to 1395 MHz
-RTX 3090,Xeon Platinum 8360Y ES,10000,8,32,32,Ubuntu 22.04,2.1.4.giga30,0.160,Petar,GPU core locked to 1395 MHz
-RTX 3090,Xeon Platinum 8360Y ES,10000,8,32,33,Ubuntu 22.04,2.1.4.giga30,0.058,Petar,GPU core locked to 1395 MHz
+RTX 4060 Ti,E5-2697 v3,"20,000",14,32,30,Ubuntu 22.04,2.1.4.giga30,0.461,Coloc77,"PCIe 3, X99 F8 board"
+RTX 4060 Ti,E5-2697 v3,"50,000",14,32,30,Ubuntu 22.04,2.1.4.giga30,0.469,Coloc77,"PCIe 3, X99 F8 board"
+RTX 4060 Ti,E5-2697 v3,"20,000",14,32,31,Ubuntu 22.04,2.1.4.giga30,0.248,Coloc77,"PCIe 3, X99 F8 board"
+RTX 4060 Ti,E5-2697 v3,"50,000",14,32,31,Ubuntu 22.04,2.1.4.giga30,0.258,Coloc77,"PCIe 3, X99 F8 board"
+RTX 3090,TR PRO 5995WX,"10,000",8,32,32,Ubuntu 21.10,2.1.4.giga31,0.200,LebanonJon,
+RTX 3090,TR PRO 5995WX,"10,000",8,32,33,Ubuntu 21.10,2.1.4.giga31,0.073,LebanonJon,
+RTX 4080 Super,Xeon Gold 6336Y,"10,000",8,32,32,Ubuntu 21.10,2.1.4.giga31,0.234,LebanonJon,
+RTX 3070,i7 8700K,"20,000",12,32,30,Windows 11 Pro,2.1.4.giga30,0.545,Thomas Goodman,64GB RAM
+RTX 3090,i9 7960X,"20,000",16,32,30,Windows 11 Pro,2.1.4.giga30,0.837,Thomas Goodman,256GB RAM
+RTX 4090,Ryzen 7950X3D,"20,000",16,32,30,Windows 11 Pro,2.1.4.giga30,1.339,Thomas Goodman,128GB RAM
+RTX 3090,Xeon Platinum 8360Y ES,"10,000",8,32,30,Ubuntu 22.04,2.1.4.giga30,0.731,Petar,GPU core locked to 1395 MHz
+RTX 3090,Xeon Platinum 8360Y ES,"10,000",8,32,31,Ubuntu 22.04,2.1.4.giga30,0.378,Petar,GPU core locked to 1395 MHz
+RTX 3090,Xeon Platinum 8360Y ES,"10,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.160,Petar,GPU core locked to 1395 MHz
+RTX 3090,Xeon Platinum 8360Y ES,"10,000",8,32,33,Ubuntu 22.04,2.1.4.giga30,0.058,Petar,GPU core locked to 1395 MHz
 RTX 3060,i7-6700K,100,8,32,30,Debian 11,2.1.4.giga31,0.169,Oulalahakabu,
-RTX 3060,i7-6700K,2000,8,32,30,Debian 11,2.1.4.giga31,0.268,Oulalahakabu,
-RTX 3060,i7-6700K,5000,8,32,30,Debian 11,2.1.4.giga31,0.312,Oulalahakabu,
-RTX 3060,i7-6700K,10000,8,32,30,Debian 11,2.1.4.giga31,0.314,Oulalahakabu,
+RTX 3060,i7-6700K,"2,000",8,32,30,Debian 11,2.1.4.giga31,0.268,Oulalahakabu,
+RTX 3060,i7-6700K,"5,000",8,32,30,Debian 11,2.1.4.giga31,0.312,Oulalahakabu,
+RTX 3060,i7-6700K,"10,000",8,32,30,Debian 11,2.1.4.giga31,0.314,Oulalahakabu,
 RTX 3060,i7-6700K,"20,000",8,32,30,Debian 11,2.1.4.giga31,0.327,Oulalahakabu,
 RTX 3060,i7-6700K,"50,000",8,32,30,Debian 11,2.1.4.giga31,0.322,Oulalahakabu,
 RTX 3060 Ti,Ryzen 5600X,"10,000",8,32,30,Win 11,2.1.4.giga30,0.439,headstrong356,
 RTX 3060 Ti,Ryzen 5600X,"20,000",8,32,30,Win 11,2.1.4.giga30,0.453,headstrong356,
 RTX 3060 Ti,Ryzen 5600X,"50,000",8,32,30,Win 11,2.1.4.giga30,0.463,headstrong356,
 Telsa P4,2700X,"10,000",8,32,30,Win 11,2.1.4.giga30,0.096,headstrong356,
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.238,bambinone,"No HT, PL=100W (min)"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.298,bambinone,"No HT, PL=120W"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.355,bambinone,"No HT, PL=140W"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.388,bambinone,"No HT, PL=160W"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.404,bambinone,"No HT, PL=180W"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.411,bambinone,"No HT, PL=200W"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.414,bambinone,"No HT, PL=220W (stock)"
-RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.417,bambinone,"No HT, PL=240W (max)"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.193,bambinone,"One CCX, PL=100W (min)"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.241,bambinone,"One CCX, PL=120W"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.260,bambinone,"One CCX, PL=140W"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.273,bambinone,"One CCX, PL=160W"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.284,bambinone,"One CCX, PL=180W"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.292,bambinone,"One CCX, PL=200W"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.296,bambinone,"One CCX, PL=220W (stock)"
-RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.302,bambinone,"One CCX, PL=240W (max)"
-RTX 3060ti x2 +P4,E5-2637v3,"50,000",8,32,30,Ubuntu 22.04 Server,2.1.4.giga31,0.999,4DoorGTZ,PCIe 3 (P4 2.0 x4)
-RTX 3060ti x2 +P4,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga31,0.557,4DoorGTZ,PCIe 3 (P4 2.0 x4)
-RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.494,4DoorGTZ,PCIe 3 pl = 200W
-RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.480,4DoorGTZ,PCIe 3 pl = 175W
-RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.459,4DoorGTZ,PCIe 3 pl = 150W
-RTX 3060ti x2,E5-2637v3,"50,000",8,32,31,Ubuntu 22.04 Server,2.1.4.giga32,0.426,4DoorGTZ,PCIe 3 pl = 125W
-,,,,,,,,,,
-,,,,,,,,,,
-,,,,,,,,,,
-RTX A5000,2 x E5-2650 v2,"10,000",8,32,29,Ubuntu 20.04 server,2.1.4.giga32,1.150,madMAx43v3r,
-GTX 1070 Ti,E5-2690 v4,"10,000",8,32,29,Windows 10 Pro,2.2.1.giga33,0.219,madMAx43v3r,
-GTX 1070 Ti,E5-2690 v4,"10,000",8,32,30,Windows 10 Pro,2.2.1.giga33,0.153,madMAx43v3r,
-GTX 1070 Ti,E5-2690 v4,"10,000",8,32,31,Windows 10 Pro,2.2.1.giga33,0.086,madMAx43v3r,
-RTX 3060,E5-2698v4,633,,32,29,Ubuntu 23.10,2.1.4.giga32,0.42,DomoKitty,120W power limit
-RTX 3060,E5-2698v4,"2,500",,32,29,Ubuntu 23.10,2.1.4.giga32,0.496,DomoKitty,120W power limit
-RTX 3060,E5-2698v4,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.539,DomoKitty,120W power limit
-RTX 3060,E5-2698v4,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32,0.574,DomoKitty,170W default power
-RTX 3060,E5-2698v4,"2,500",,32,30,Ubuntu 23.10,2.1.4.giga32,0.277,DomoKitty,120W power limit
-RTX 3060,E5-2698v4,"10,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.331,DomoKitty,120W power limit
-RTX 3060,E5-2698v4,"50,000",,32,30,Ubuntu 23.10,2.1.4.giga32,0.341,DomoKitty,120W power limit
-RTX 3070,Ryzen 7800X3D,633,,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.704,DomoKitty,175W power limit
-RTX 3070,Ryzen 7800X3D,"2,500",,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.848,DomoKitty,175W power limit
-RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.922,DomoKitty,175W power limit
-RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.695,DomoKitty,100W power limit
-RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.801,DomoKitty,120W power limit
-RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.855,DomoKitty,140W power limit
-RTX 3070,Ryzen 7800X3D,"10,000",,32,29,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.969,DomoKitty,220W default power
-RTX 3070,Ryzen 7800X3D,"50,000",,32,30,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.615,DomoKitty,220W default power
-RTX 3070,Ryzen 7800X3D,"20,000",,32,30,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.577,DomoKitty,175W power limit
-RTX 3070,Ryzen 7800X3D,"10,000",,32,30,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.561,DomoKitty,175W power limit
-RTX 3070,Ryzen 7800X3D,"2,500",,32,30,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.468,DomoKitty,175W power limit
-RTX 3070,Ryzen 7800X3D,"2,500",,32,30,Ubuntu 23.10,2.1.4.giga32 bac120ed33,0.403,DomoKitty,120W power limit
-RTX 3060 Ti,E5-2670 v1,"10,000",16,32,29,Ubuntu 23.04 Server,2.1.4.giga32,0.798,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
-RTX 3060 Ti,E5-2670 v1,"20,000",16,32,30,Ubuntu 23.04 Server,2.1.4.giga32,0.497,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
-RTX 3060 Ti,E5-2670 v1,"50,000",16,32,31,Ubuntu 23.04 Server,2.1.4.giga32,0.245,303-Acid,"HP Z420, Dell OEM RTX 3060 Ti"
-RTX 4070 Super,Ryzen 5800X,"1,230",8,32,29,Ubuntu 23.10 Server,2.1.4.giga32,0.918,gnomuz,1 partial proof every 8 min for 1 PiB raw (180 partials / day)
-RTX 4070 Super,Ryzen 5800X,"10,000",8,32,29,Ubuntu 23.10 Server,2.1.4.giga32,1.088,gnomuz,Recommended difficulty for C29
-RTX 4070 Super,Ryzen 5800X,"800,000",8,32,29,Ubuntu 23.10 Server,2.1.4.giga32,1.121,gnomuz,Solo equivalent
 RTX 3070,Ryzen 9 3900X,"10,000",6,32,29,Ubuntu 22.04,2.1.4.giga32,0.672,bambinone,"One CCX, PL=100W (min)"
 RTX 3070,Ryzen 9 3900X,"10,000",6,32,29,Ubuntu 22.04,2.1.4.giga32,0.783,bambinone,"One CCX, PL=120W"
 RTX 3070,Ryzen 9 3900X,"10,000",6,32,29,Ubuntu 22.04,2.1.4.giga32,0.845,bambinone,"One CCX, PL=140W"
@@ -331,23 +343,26 @@ RTX 3070,Ryzen 9 3900X,"20,000",6,32,30,Ubuntu 22.04,2.1.4.giga32,0.577,bambinon
 RTX 3070,Ryzen 9 3900X,"20,000",6,32,30,Ubuntu 22.04,2.1.4.giga32,0.592,bambinone,"One CCX, PL=200W"
 RTX 3070,Ryzen 9 3900X,"20,000",6,32,30,Ubuntu 22.04,2.1.4.giga32,0.600,bambinone,"One CCX, PL=220W (stock)"
 RTX 3070,Ryzen 9 3900X,"20,000",6,32,30,Ubuntu 22.04,2.1.4.giga32,0.612,bambinone,"One CCX, PL=240W (max)"
-RTX 4090,E5-1620,"1,500",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.195,Engage,PCIe 3; Z420 475W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
-RTX 4090,E5-1620,"2,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.209,Engage,PCIe 3; Z420 482W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
-RTX 4090,E5-1620,"2,000",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.219,Engage,PCIe 3; Z420 578W grid power metered
-RTX 4090,E5-1620,"2,500",8,32,32,Ubuntu 22.04,2.1.4.giga30,0.217,Engage,PCIe 3; Z420 483W grid power metered (using sudo nvidia-smi -i 0 -pl 330)
-,,,,32,,,,,,
-RTX 2080 Ti,Ryzen TR-1920X,5000,16,32,29,Endeavour Linux 6.7.4,2.1.4.giga30,0.759,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,10000,16,32,29,Endeavour Linux 6.7.4,2.1.4.giga30,0.780,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,20000,16,32,29,Endeavour Linux 6.7.4,2.1.4.giga30,0.786,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,5000,16,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.495,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,10000,16,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.520,leslieC,
-RTX 2080 Ti,Ryzen TR-1920X,20000,16,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.544,leslieC,
-RTX 3090,Ryzen TR-1920X,5000,16,32,29,Endeavour Linux 6.7.4,2.1.4.giga30,1.536,leslieC,
-RTX 3090,Ryzen TR-1920X,10000,16,32,29,Endeavour Linux 6.7.4,2.1.4.giga30,1.569,leslieC,
-RTX 3090,Ryzen TR-1920X,20000,16,32,29,Endeavour Linux 6.7.4,2.1.4.giga30,1.594,leslieC,
-RTX 3090,Ryzen TR-1920X,5000,16,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.919,leslieC,
-RTX 3090,Ryzen TR-1920X,10000,16,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,0.969,leslieC,
-RTX 3090,Ryzen TR-1920X,20000,16,32,30,Endeavour Linux 6.7.4,2.1.4.giga30,1.017,leslieC,
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.238,bambinone,"No HT, PL=100W (min)"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.298,bambinone,"No HT, PL=120W"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.355,bambinone,"No HT, PL=140W"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.388,bambinone,"No HT, PL=160W"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.404,bambinone,"No HT, PL=180W"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.411,bambinone,"No HT, PL=200W"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.414,bambinone,"No HT, PL=220W (stock)"
+RTX 4070 Super,Core i5-12400,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.417,bambinone,"No HT, PL=240W (max)"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.193,bambinone,"One CCX, PL=100W (min)"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.241,bambinone,"One CCX, PL=120W"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.260,bambinone,"One CCX, PL=140W"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.273,bambinone,"One CCX, PL=160W"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.284,bambinone,"One CCX, PL=180W"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.292,bambinone,"One CCX, PL=200W"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.296,bambinone,"One CCX, PL=220W (stock)"
+RTX 3070,Ryzen 9 3900X,"50,000",6,32,31,Ubuntu 22.04,2.1.4.giga32,0.302,bambinone,"One CCX, PL=240W (max)"
+GTX 1070,Intel 10400F,100,12,32,31,Ubuntu 20.04 server,2.1.4.giga32,0.048,AnimeTri,
+GTX 1070,Intel 10400F,"10,000",12,32,31,Ubuntu 20.04 server,2.1.4.giga32,0.085,AnimeTri,
+RTX 3060 Ti,Ryzen TR-3970X,"250,000",16,32,29,Ubuntu 20.04 server,2.1.4.giga32,0.763,cartastagnola,
+RTX 3060 Ti,Ryzen TR-3970X,"250,000",16,32,30,Ubuntu 20.04 server,2.1.4.giga32,0.476,cartastagnola,
 ,,,,,,,,,,
 ,,,,,,,,,,
 ,,,,,,,,,,

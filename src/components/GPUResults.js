@@ -9,7 +9,7 @@ function GPUResults(props) {
   useEffect(()=>{
       const fetchData = async () => { 
           try {
-              const response = await axios.get("https://gh-max-farm.parkert.dev/backend/showResultsTableByGPU?gpu="+encodeURIComponent(props.selectedGPU)+"&clevel="+encodeURIComponent(props.cLevel)+"&ksize="+encodeURIComponent(props.kSize), {});
+              const response = await axios.get("https://gh-max-farm.parkert.dev/backend/showResultsTableByGPU?gpu="+encodeURIComponent(props.selectedGPU)+"&clevel="+encodeURIComponent(props.cLevel)+"&ksize="+encodeURIComponent(props.kSize)+"&gigaversion="+encodeURIComponent(props.gigaVersion), {});
               setGPUResults(response.data.results)
           }
             catch (error) {
@@ -17,8 +17,10 @@ function GPUResults(props) {
           }
         };
         fetchData();
-  },[props.selectedGPU, props.cLevel, props.kSize])
+  },[props.selectedGPU, props.cLevel, props.kSize, props.gigaVersion])
 
+
+  //used to create the giga version select element array
 
 
 
@@ -34,6 +36,12 @@ function GPUResults(props) {
             <option value="34">K34</option>
 
         </select>
+        <select defaultValue={"Any"} onChange={(event)=>{props.setGigaVersion(event.target.value)}}>
+            <option value="Any">Any</option>
+            {props.gigaVersionArray.map((value, index) =>(
+                <option key={index}>{value.giga_version}</option>
+            ))}
+        </select>
         <select defaultValue={"Any"} onChange={(event)=>{props.setCLevel(event.target.value)}}>
             <option value="Any">Any</option>
             <option value="26">C26</option>
@@ -48,7 +56,7 @@ function GPUResults(props) {
         </div>
       </div>
       <br/>
-      <p>Showing {gpuResults.length} results for: "{props.selectedGPU}" at K-Size "{props.kSize}" C-Level: "{props.cLevel}"</p>
+      <p onClick={()=>{console.log(gpuResults)}}>Showing {gpuResults.length} results for: "{props.selectedGPU}" at K-Size "{props.kSize}" C-Level: "{props.cLevel}"</p>
       <hr style={{width:"100%"}}/>
     {gpuResults.length > 0 ? 
             <>
