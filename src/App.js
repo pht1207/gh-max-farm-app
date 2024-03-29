@@ -14,6 +14,7 @@ function App() {
   const [kSizeArray, SetKSizeArray] = useState([""])
   const [cLevelArray, setCLevelArray] = useState([""])
 
+  const [siteViews, setSiteViews] = useState(1);
 
   //used to get the giga_version values from csv
   useEffect(()=>{
@@ -53,6 +54,19 @@ function App() {
     fetchData();
   },[])
 
+  useEffect(()=>{
+    const fetchData = async () => { 
+      try {
+          const response = await axios.get("https://gh-max-farm.parkert.dev/backend/getSiteViews", {});
+          setSiteViews(response.data.results[0].view_count)
+      }
+        catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+    fetchData();
+  },[])
+
   return (
     <div className="App">
       <h1>Max Farm V3 Website</h1>
@@ -69,7 +83,12 @@ function App() {
         />
         
       </div>
-      <div className='Footer'><p onClick={()=>{window.open("https://github.com/pht1207")}}>Made by Parker Throneberry</p></div>
+      <div className='Footer'>
+        <div className='InternalFooterDiv'>
+          <p>Total Site views: {siteViews}</p>
+          <p onClick={()=>{window.open("https://github.com/pht1207")}}>Made by Parker Throneberry</p>
+        </div>
+      </div>
     </div>
   );
 }

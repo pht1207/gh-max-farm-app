@@ -1,6 +1,6 @@
 .App {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,8 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
-  margin:1em
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 
@@ -32,4 +33,9 @@ hr{
 }
 .Footer :hover{
   cursor: pointer;
+}
+.InternalFooterDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

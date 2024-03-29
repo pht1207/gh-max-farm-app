@@ -10,7 +10,6 @@ const axios = require('axios');
 
 const upload = multer();
 
-let viewCount = 0;
 const corsOptions ={
     origin:'*', 
     //credentials:true,            //access-control-allow-credentials:true
@@ -63,8 +62,21 @@ start(); //starts the process of putting the csv into the DB
         -showGPUNames
         -showGPUResultsByGPU
 */}
-
 const showGPUNames = async function(req, res){
+
+    {/* This query is used to update the site counter every time the list of gpus in the frontend filter is rendered */}
+    const query = "UPDATE site_stats SET view_count = view_count + 1 WHERE site_stats_id = 1"
+    pool.query(query, [], (error, results) =>{
+        if(error){
+            console.error(error);
+        }
+        else{
+            //success
+        } 
+    })
+
+
+    {/* This query is used to generate all gpu's from the gpu_table and send them to the frontend */}
     pool.query("SELECT gpu_table.gpu_name from gpu_table", (error, results) =>{
         if(error){
             console.error(error);
@@ -84,7 +96,6 @@ app.get('/showGPUNames', upload.none(), showGPUNames)
 
 //Gets rows from result table where the gpu from get request matches
 const showResultsTableByGPU = async function(req, res){
-    viewCount++;
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
     "WHERE gpu_name = ? "+
@@ -165,6 +176,27 @@ const getKSizes = async function(req, res){
 app.get('/getGigaVersions', upload.none(), getGigaVersions)
 app.get('/getCLevels', upload.none(), getCLevels)
 app.get('/getKSizes', upload.none(), getKSizes)
+
+
+
+//gets the total view count for website
+const getSiteViews = async function(req, res){
+    const query = "SELECT view_count from site_stats"
+    pool.query(query, [], (error, results) =>{
+        if(error){
+            console.error(error);
+            res.status(500).json({
+                error:"error occured"
+              });
+        }
+        else{
+            res.status(200).json({
+                results
+              });
+            }
+        })
+}
+app.get('/getSiteViews', upload.none(), getSiteViews)
 
 {/* END OF SECTION: HTTP REQUESTS*/}
 
@@ -384,22 +416,18 @@ const cron = require('node-cron');
 cron.schedule('0 0 * * *', function() {
   console.log('Running start() 12am');
   start();
-  console.log(viewCount);
 });
 cron.schedule('0 12 * * *', function() {
     console.log('Running start() 12pm');
     start();
-    console.log(viewCount);
   });
   cron.schedule('0 6 * * *', function() {
     console.log('Running start() 6am');
     start();
-    console.log(viewCount);
   });
   cron.schedule('0 18 * * *', function() {
     console.log('Running start() 6pm');
     start();
-    console.log(viewCount);
   });
 
 {/* END SECTION: FETCH CSV */}
