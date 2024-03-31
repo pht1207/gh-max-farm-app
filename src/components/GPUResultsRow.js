@@ -65,15 +65,15 @@ function GPUResultsRow(props) {
             <p>Max Size (PiB): {props.resultElement.max_farm_size}</p>
         </div>
         {clicked ? 
-        <div className='GPUResultsExtraInformation'>
-          <p>Version: {props.resultElement.giga_version}</p>
-          <p>OS: {props.resultElement.operating_system}</p>
-          <p>User: {props.resultElement.user}</p>
-          <p>Information: {props.resultElement.information}</p>
-        </div>
+          <div className='GPUResultsExtraInformation'>
+            <p>Version: {props.resultElement.giga_version}</p>
+            <p>OS: {props.resultElement.operating_system}</p>
+            <p>User: {props.resultElement.user}</p>
+            <p>Information: {props.resultElement.information}</p>
+          </div>
           :
           <></>
-          }
+        }
     </>
     }
 

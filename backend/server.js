@@ -98,7 +98,7 @@ app.get('/showGPUNames', upload.none(), showGPUNames)
 const showResultsTableByGPU = async function(req, res){
     const query = "SELECT * from results "+
     "INNER JOIN gpu_table ON results.gpu_id = gpu_table.gpu_id "+
-    "WHERE gpu_name = ?  OR ? = 'ANY' "+
+    "WHERE (gpu_name = ?  OR ? = 'ANY') "+
     "AND (c_level = ? OR ? = 'ANY') "+
     "AND k_size = ? "+
     "AND (giga_version = ? OR ? = 'ANY') "+
@@ -258,7 +258,7 @@ async function csvOutputMaker(){
             .pipe(csv.parse({
                 headers: ['GPU', 'CPU', 'Difficulty', '-r', 'k', 'C', 'OS', 'Giga Version', '(Plot filter = 256)', 'User', 'Information'],
                 skipLines: 1
-            }))            
+            }))
             .on('error', error => reject(error))
             .on('headers', (headers)=>{console.log("csv headers:", headers)})
             .on('data', row => {

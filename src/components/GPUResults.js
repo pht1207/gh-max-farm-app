@@ -11,6 +11,7 @@ function GPUResults(props) {
           try {
               const response = await axios.get("https://gh-max-farm.parkert.dev/backend/showResultsTableByGPU?gpu="+encodeURIComponent(props.selectedGPU)+"&clevel="+encodeURIComponent(props.cLevel)+"&ksize="+encodeURIComponent(props.kSize)+"&gigaversion="+encodeURIComponent(props.gigaVersion), {});
               setGPUResults(response.data.results)
+              console.log(response.data.results);
           }
             catch (error) {
             console.error('Error fetching data: ', error);
