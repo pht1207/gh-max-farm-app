@@ -66,6 +66,7 @@ function GPUResultsRow(props) {
         </div>
         {clicked ? 
           <div className='GPUResultsExtraInformation'>
+            <p>Power: {props.resultElement.power || "N/A"}</p>
             <p>Version: {props.resultElement.giga_version}</p>
             <p>OS: {props.resultElement.operating_system}</p>
             <p>User: {props.resultElement.user}</p>

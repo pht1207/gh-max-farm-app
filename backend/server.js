@@ -123,7 +123,7 @@ app.get('/showResultsTableByGPU', upload.none(), showResultsTableByGPU)
 
 
 const getGigaVersions = async function(req, res){
-    const query = "SELECT DISTINCT giga_version from results"
+    const query = "SELECT DISTINCT giga_version from results ORDER BY giga_version DESC"
     pool.query(query, [], (error, results) =>{
         if(error){
             console.error(error);
@@ -373,7 +373,7 @@ async function resultsTableMaker(array){
                         let secondQuery = "INSERT INTO results (gpu_id, power, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, max_farm_size, user, information, hash)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?),?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                         pool.query(secondQuery, values, (error, results) =>{
                             if(error){
-                                console.error(error);
+                                //console.error(error);
                                 reject(false);
                             }
                             else{
