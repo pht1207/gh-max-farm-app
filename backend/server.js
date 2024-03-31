@@ -256,7 +256,7 @@ async function csvOutputMaker(){
     return new Promise((resolve, reject) => {
         fs.createReadStream(path.resolve(__dirname, './', fileName))
             .pipe(csv.parse({
-                headers: ['GPU', 'CPU', 'Difficulty', '-r', 'k', 'C', 'OS', 'Giga Version', '(Plot filter = 256)', 'User', 'Information'],
+                headers: ['GPU', 'Power (W)', 'CPU', 'Difficulty', '-r', 'k', 'C', 'OS', 'Giga Version', '(Plot filter = 256)', 'User', 'Information'],
                 skipLines: 1
             }))
             .on('error', error => reject(error))
@@ -267,6 +267,7 @@ async function csvOutputMaker(){
                 else{
                     let gpuObject = {
                         GPU: row.GPU.toUpperCase(),
+                        ['Power (W)']: row['Power (W)'],
                         CPU: row.CPU,
                         Difficulty: row.Difficulty,
                         ['-r']: row['-r'],
@@ -278,6 +279,7 @@ async function csvOutputMaker(){
                         User:row.User,
                         Information:row.Information
                     }
+
                     csvOutputArray.push(gpuObject)
                 }
             })
@@ -346,6 +348,7 @@ async function resultsTableMaker(array){
         for(let i = 0; i < array.length; i++){
             let values = [
                 array[i]['GPU'],
+                array[i]["Power (W)"],
                 array[i]['CPU'],
                 array[i]['Difficulty'],
                 array[i]['-r'],
@@ -367,20 +370,16 @@ async function resultsTableMaker(array){
                     console.error(error);
                 }
                 else{
-                    if(results.length === 0){ //if there are no matching results found for the has in the select statement, then insert
-                        let secondQuery = "INSERT INTO results (gpu_id, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, max_farm_size, user, information, hash)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                        let secondQuery = "INSERT INTO results (gpu_id, power, cpu_used, difficulty, thread_count, k_size, c_level, operating_system, giga_version, max_farm_size, user, information, hash)  VALUES ((SELECT gpu_id FROM gpu_table WHERE gpu_name = ?),?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                         pool.query(secondQuery, values, (error, results) =>{
                             if(error){
-                                //console.error("Error entering result to DB")
-                                //console.error(error);
+                                console.error(error);
                                 reject(false);
                             }
                             else{
                             }
                         })
-                    }
-                    else{
-                    }
+
                 }
             })
 
