@@ -102,7 +102,7 @@ const showResultsTableByGPU = async function(req, res){
     "AND (c_level = ? OR ? = 'ANY') "+
     "AND k_size = ? "+
     "AND (giga_version = ? OR ? = 'ANY') "+
-    "ORDER BY c_level ASC, max_farm_size ASC"
+    "ORDER BY c_level ASC, max_farm_size ASC, power ASC"
     const values = [req.query.gpu || "ANY", req.query.gpu || "ANY", req.query.clevel || "ANY", req.query.clevel || "ANY", req.query.ksize, req.query.gigaversion || "ANY", req.query.gigaversion || "ANY"];
     pool.query(query, values, (error, results) =>{
         if(error){
@@ -267,7 +267,7 @@ async function csvOutputMaker(){
                 else{
                     let gpuObject = {
                         GPU: row.GPU.toUpperCase(),
-                        ['Power (W)']: row['Power (W)'],
+                        ['Power (W)']: row['Power (W)'] ? row['Power (W)'] + "W" : "N/A",
                         CPU: row.CPU,
                         Difficulty: row.Difficulty,
                         ['-r']: row['-r'],
@@ -277,7 +277,7 @@ async function csvOutputMaker(){
                         ['Giga Version']:row["Giga Version"],
                         ["(Plot filter = 256)"]:row["(Plot filter = 256)"],
                         User:row.User,
-                        Information:row.Information
+                        Information:row.Information ? row.Information : "N/A"
                     }
 
                     csvOutputArray.push(gpuObject)
@@ -360,6 +360,9 @@ async function resultsTableMaker(array){
                 array[i]['User'],
                 array[i]['Information']
             ];
+            if(array[i]["Power (W)"] === null){
+                array[i]["Power (W)"] = "N/A";
+            }
 
             hash = hashRow(values)
             values.push(hash)

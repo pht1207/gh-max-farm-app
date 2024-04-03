@@ -30,6 +30,8 @@ function GPUResultsRow(props) {
     if(props.resultElement.user === ""){
       props.resultElement.user = "N/A";
     }
+
+
 },[backgroundColor])
 
 
@@ -40,6 +42,7 @@ function GPUResultsRow(props) {
       <>
         <div className="GPUResultsRow" style={{background:backgroundColor}} onClickCapture={()=>{setBackgroundColor('rgba(225, 225, 225, 1)')}}onClick={()=>{setClicked(!clicked)}} onMouseOver={()=>{setBackgroundColor('rgba(225, 225, 225, 1)')}} onMouseLeave={()=>{setBackgroundColor('rgba(245, 245, 245, 1)')}}>
             <p>GPU: {props.resultElement.gpu_name}</p>
+            <p>Power: {props.resultElement.power}</p>
             <p>CPU: {props.resultElement.cpu_used}</p>
             <p>C-Level: {props.resultElement.c_level}</p>
             <p>Difficulty: {props.resultElement.difficulty}</p>
@@ -59,6 +62,7 @@ function GPUResultsRow(props) {
     :
     <>
         <div className="GPUResultsRow" style={{background:backgroundColor}} onClickCapture={()=>{setBackgroundColor('rgba(225, 225, 225, 1)')}}onClick={()=>{setClicked(!clicked)}} onMouseOver={()=>{setBackgroundColor('rgba(225, 225, 225, 1)')}} onMouseLeave={()=>{setBackgroundColor('rgba(245, 245, 245, 1)')}}>
+            <p>Power: {props.resultElement.power || "N/A"}</p>
             <p>CPU: {props.resultElement.cpu_used}</p>
             <p>C-Level: {props.resultElement.c_level}</p>
             <p>Difficulty: {props.resultElement.difficulty}</p>
@@ -66,7 +70,6 @@ function GPUResultsRow(props) {
         </div>
         {clicked ? 
           <div className='GPUResultsExtraInformation'>
-            <p>Power: {props.resultElement.power || "N/A"}</p>
             <p>Version: {props.resultElement.giga_version}</p>
             <p>OS: {props.resultElement.operating_system}</p>
             <p>User: {props.resultElement.user}</p>
